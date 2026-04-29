@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register – ARENIUM 26</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- BACKGROUND ANIMATION -->
+<div class="bg-animation"></div>
+
+<!-- HEADER WITH LOGO -->
+<header class="hero" style="padding: 60px 20px;">
+    <!-- SAME LOGO AS INDEX -->
+    <img src="images/logom.png" class="logo parallax-logo" alt="AREN IUM 26 Logo">
+
+    <h1 class="glow" style="font-size: 2.8rem;">Event Registration</h1>
+    <p class="tagline">ARENIUM 26 – The Arena of Innovation</p>
+</header>
+
+<!-- REGISTRATION FORM -->
+<section class="glass form-container">
+    <h2 style="text-align:center; margin-bottom:20px;">Participant Details</h2>
+
+    <form onsubmit="handleSubmit(event)">
+
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="text" placeholder="College Name" required>
+
+        <input type="text" placeholder="Grade / Year" required>
+
+        <input type="tel" placeholder="Contact Number" required>
+
+        <select required>
+            <option value="">Select Event</option>
+            <option>Hackathon</option>
+            <option>Coding Challenge</option>
+        </select>
+
+        <button type="submit" class="cta" style="width:100%;">Submit Registration</button>
+    </form>
+</section>
+
+<!-- SAME FOOTER AS INDEX -->
+<footer>
+    <p>Organised by School of Information Science, Presidency University</p>
+</footer>
+
+
+<!-- SUCCESS ANIMATION OVERLAY -->
+<div id="successOverlay">
+    <img src="images/Zoomin.png" alt="AREN IUM 26 Logo">
+    
+</div>
+<script src="js/script.js"></script>
+
+</body>
+</html>
