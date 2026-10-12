@@ -11,11 +11,11 @@
 ```text
 ARENIUM 27/
 ├── index.html            # Complete Home Page (Hero, Glitch Title, Countdown, About, Events Preview, Poster, Team, QR Scanner, Footer)
-├── events.html           # Events Matrix (Pre-events & Main events grid) [Phase 2]
-├── schedule.html         # Day-wise Timeline Schedule [Phase 2]
-├── gallery.html          # Interactive Cyber Lightbox Gallery [Phase 2]
-├── sponsors.html         # Sponsor Tiers & Partnership Portal [Phase 2]
-├── contact.html          # Contact Directory, Team Cards & Google Map [Phase 2]
+├── events.html           # Events Matrix (Pre-events & Main events grid with filter chips)
+├── schedule.html         # Day-wise Timeline Schedule (Vertical neon line & Day tabs)
+├── gallery.html          # Interactive Cyber Lightbox Gallery (Fullscreen modal & keyboard nav)
+├── sponsors.html         # Sponsor Tiers & Partnership Portal
+├── contact.html          # Contact Directory, Team Cards & Google Map
 ├── rulebook.pdf          # Official Event Rulebook & Guidelines
 ├── css/
 │   └── style.css         # Master Cyberpunk Design System & Responsive Stylesheet
