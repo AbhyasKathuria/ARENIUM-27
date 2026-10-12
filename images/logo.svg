@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="logoCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#7000ff"/>
+    </linearGradient>
+    <linearGradient id="logoPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff0055"/>
+      <stop offset="100%" stop-color="#ff7700"/>
+    </linearGradient>
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Crest Icon -->
+  <g transform="translate(10, 10)">
+    <polygon points="30,2 58,18 58,50 30,66 2,50 2,18" fill="#0d0b1a" stroke="url(#logoCyan)" stroke-width="2.5" filter="url(#logoGlow)"/>
+    <polygon points="30,8 52,21 52,47 30,59 8,47 8,21" fill="none" stroke="#ff0055" stroke-dasharray="4,3" stroke-width="1.2"/>
+    <!-- Stylized A glyph -->
+    <path d="M30 15 L44 49 H37 L34 41 H26 L23 49 H16 Z M30 27 L28 35 H32 Z" fill="#00f0ff" filter="url(#logoGlow)"/>
+    <!-- Cyber circuit nodes -->
+    <circle cx="30" cy="2" r="2.5" fill="#00f0ff"/>
+    <circle cx="58" cy="18" r="2.5" fill="#ff0055"/>
+    <circle cx="2" cy="18" r="2.5" fill="#ff0055"/>
+    <circle cx="30" cy="66" r="2.5" fill="#ffe600"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(85, 22)">
+    <text x="0" y="24" font-family="'Orbitron', 'Rajdhani', sans-serif" font-weight="900" font-size="28" letter-spacing="4" fill="#ffffff" filter="url(#logoGlow)">
+      ARENIUM<tspan fill="#00f0ff">'</tspan><tspan fill="#ff0055">27</tspan>
+    </text>
+    <text x="2" y="42" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="9" letter-spacing="3" fill="#9aa4c2">
+      SOIS · PRESIDENCY UNIVERSITY
+    </text>
+  </g>
+</svg>

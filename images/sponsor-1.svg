@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <rect width="300" height="120" fill="#080714" rx="6"/>
+  <rect x="2" y="2" width="296" height="116" fill="none" stroke="#ff0055" stroke-width="1.5" rx="4" opacity="0.4"/>
+  <circle cx="50" cy="60" r="22" fill="none" stroke="#00f0ff" stroke-width="3"/>
+  <circle cx="50" cy="60" r="8" fill="#ff0055"/>
+  <text x="90" y="58" font-family="'Orbitron', sans-serif" font-size="18" font-weight="900" fill="#ffffff">CYBER<tspan fill="#ff0055">PULSE</tspan></text>
+  <text x="90" y="80" font-family="'JetBrains Mono', monospace" font-size="10" fill="#9aa4c2">CLOUD PARTNER</text>
+</svg>

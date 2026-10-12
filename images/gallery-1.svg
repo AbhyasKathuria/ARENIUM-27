@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0818"/>
+      <stop offset="100%" stop-color="#180e30"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g1)"/>
+  <rect x="15" y="15" width="570" height="370" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="300" cy="180" r="80" fill="none" stroke="#ff0055" stroke-width="2" opacity="0.6"/>
+  <path d="M 240,240 L 300,120 L 360,240 Z" fill="none" stroke="#00f0ff" stroke-width="3"/>
+  <circle cx="300" cy="180" r="10" fill="#ffe600"/>
+  <text x="300" y="310" font-family="'Orbitron', sans-serif" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">LAN ESPORTS ARENA</text>
+  <text x="300" y="335" font-family="'JetBrains Mono', monospace" font-size="12" fill="#00f0ff" text-anchor="middle">VALORANT SHOWDOWN // ARENIUM</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05040a" />
+      <stop offset="40%" stop-color="#0c091d" />
+      <stop offset="70%" stop-color="#180b2c" />
+      <stop offset="100%" stop-color="#040308" />
+    </linearGradient>
+    <linearGradient id="neonPinkCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#ff0055" />
+      <stop offset="100%" stop-color="#ffe600" />
+    </linearGradient>
+    <filter id="pGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.12)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1100" fill="url(#bgGrad)" />
+  <rect width="800" height="1100" fill="url(#grid)" />
+
+  <!-- Neon Border Frame -->
+  <rect x="25" y="25" width="750" height="1050" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="2" />
+  <rect x="35" y="35" width="730" height="1030" fill="none" stroke="rgba(255, 0, 85, 0.3)" stroke-width="1" stroke-dasharray="12,6" />
+
+  <!-- Corner Brackets -->
+  <path d="M 20,70 L 20,20 L 70,20" fill="none" stroke="#00f0ff" stroke-width="6" />
+  <path d="M 780,70 L 780,20 L 730,20" fill="none" stroke="#00f0ff" stroke-width="6" />
+  <path d="M 20,1030 L 20,1080 L 70,1080" fill="none" stroke="#ff0055" stroke-width="6" />
+  <path d="M 780,1030 L 780,1080 L 730,1080" fill="none" stroke="#ff0055" stroke-width="6" />
+
+  <!-- Header Branding -->
+  <text x="400" y="90" font-family="'Orbitron', sans-serif" font-size="14" font-weight="700" letter-spacing="6" fill="#ffe600" text-anchor="middle">PRESIDENCY UNIVERSITY, BENGALURU</text>
+  <text x="400" y="115" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="4" fill="#9aa4c2" text-anchor="middle">SCHOOL OF INFORMATION SCIENCE PRESENTS</text>
+
+  <!-- Decorative Circuit lines -->
+  <line x1="80" y1="140" x2="720" y2="140" stroke="#00f0ff" stroke-width="1" opacity="0.5" />
+  <circle cx="80" cy="140" r="4" fill="#00f0ff" />
+  <circle cx="720" cy="140" r="4" fill="#00f0ff" />
+
+  <!-- Cyber Sun / Portal Sphere -->
+  <circle cx="400" cy="460" r="180" fill="none" stroke="#ff0055" stroke-width="2" opacity="0.6" />
+  <circle cx="400" cy="460" r="140" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.8" />
+  <circle cx="400" cy="460" r="100" fill="none" stroke="#ffe600" stroke-width="1" opacity="0.4" />
+
+  <!-- Perspective Cyber Grid Ground -->
+  <g opacity="0.45">
+    <line x1="400" y1="520" x2="50" y2="780" stroke="#00f0ff" stroke-width="1.5" />
+    <line x1="400" y1="520" x2="160" y2="780" stroke="#00f0ff" stroke-width="1.5" />
+    <line x1="400" y1="520" x2="280" y2="780" stroke="#00f0ff" stroke-width="1.5" />
+    <line x1="400" y1="520" x2="400" y2="780" stroke="#ff0055" stroke-width="2" />
+    <line x1="400" y1="520" x2="520" y2="780" stroke="#00f0ff" stroke-width="1.5" />
+    <line x1="400" y1="520" x2="640" y2="780" stroke="#00f0ff" stroke-width="1.5" />
+    <line x1="400" y1="520" x2="750" y2="780" stroke="#00f0ff" stroke-width="1.5" />
+    
+    <line x1="330" y1="570" x2="470" y2="570" stroke="#00f0ff" stroke-width="1" />
+    <line x1="260" y1="620" x2="540" y2="620" stroke="#00f0ff" stroke-width="1" />
+    <line x1="180" y1="680" x2="620" y2="680" stroke="#00f0ff" stroke-width="1.5" />
+    <line x1="90" y1="750" x2="710" y2="750" stroke="#ff0055" stroke-width="2" />
+  </g>
+
+  <!-- Big Glitch Title -->
+  <text x="404" y="374" font-family="'Orbitron', sans-serif" font-size="82" font-weight="900" letter-spacing="8" fill="#ff0055" opacity="0.8" text-anchor="middle">ARENIUM'27</text>
+  <text x="396" y="366" font-family="'Orbitron', sans-serif" font-size="82" font-weight="900" letter-spacing="8" fill="#00f0ff" opacity="0.8" text-anchor="middle">ARENIUM'27</text>
+  <text x="400" y="370" font-family="'Orbitron', sans-serif" font-size="82" font-weight="900" letter-spacing="8" fill="#ffffff" text-anchor="middle" filter="url(#pGlow)">ARENIUM'27</text>
+
+  <!-- Subtitle / Tagline -->
+  <rect x="220" y="405" width="360" height="34" rx="4" fill="#0d0b1a" stroke="#00f0ff" stroke-width="1.5" />
+  <text x="400" y="427" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" letter-spacing="3" fill="#00f0ff" text-anchor="middle">THE NEON ASCENT // 2027</text>
+
+  <!-- 3-Part Tagline -->
+  <text x="400" y="480" font-family="'Orbitron', sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#ffe600" text-anchor="middle">
+    DISRUPT THE MATRIX  //  IGNITE THE FUTURE  //  ASCEND THE GRID
+  </text>
+
+  <!-- Highlights Box -->
+  <g transform="translate(100, 800)">
+    <rect width="600" height="150" rx="8" fill="#090815" stroke="url(#neonPinkCyan)" stroke-width="2" filter="url(#pGlow)"/>
+    
+    <text x="300" y="40" font-family="'Orbitron', sans-serif" font-size="18" font-weight="800" letter-spacing="4" fill="#ffffff" text-anchor="middle">
+      FLAGSHIP NATIONAL TECH FESTIVAL
+    </text>
+    
+    <text x="300" y="75" font-family="'JetBrains Mono', monospace" font-size="13" fill="#00f0ff" text-anchor="middle">
+      LAN GAMING · TECH QUIZ · CODING · DESIGN · WORKSHOPS
+    </text>
+    
+    <text x="300" y="115" font-family="'Orbitron', sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#ffe600" text-anchor="middle">
+      ★ ₹1,00,000+ CASH POOL &amp; CERTIFICATES ★
+    </text>
+  </g>
+
+  <!-- Footer Tag -->
+  <text x="400" y="1010" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3" fill="#9aa4c2" text-anchor="middle">
+    OFFICIAL POSTER · SCHOOL OF INFORMATION SCIENCE
+  </text>
+  <text x="400" y="1035" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="2" fill="#626c8b" text-anchor="middle">
+    PRESIDENCY UNIVERSITY · ITGALPURA, BENGALURU
+  </text>
+</svg>
