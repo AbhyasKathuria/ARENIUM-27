@@ -8,36 +8,36 @@
       </feMerge>
     </filter>
     <linearGradient id="qrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="50%" stop-color="#ff0055" />
-      <stop offset="100%" stop-color="#7000ff" />
+      <stop offset="0%" stop-color="#A52A2A" />
+      <stop offset="50%" stop-color="#6C403E" />
+      <stop offset="100%" stop-color="#852222" />
     </linearGradient>
   </defs>
 
-  <rect width="400" height="400" fill="#07060f" rx="16"/>
-  <rect x="15" y="15" width="370" height="370" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="10, 5" opacity="0.6"/>
+  <rect width="400" height="400" fill="#090505" rx="16"/>
+  <rect x="15" y="15" width="370" height="370" fill="none" stroke="#A52A2A" stroke-width="1.5" stroke-dasharray="10, 5" opacity="0.6"/>
 
   <!-- Corner Reticles -->
-  <path d="M 30,60 L 30,30 L 60,30" fill="none" stroke="#00f0ff" stroke-width="4"/>
-  <path d="M 340,30 L 370,30 L 370,60" fill="none" stroke="#00f0ff" stroke-width="4"/>
-  <path d="M 30,340 L 30,370 L 60,370" fill="none" stroke="#00f0ff" stroke-width="4"/>
-  <path d="M 340,370 L 370,370 L 370,340" fill="none" stroke="#00f0ff" stroke-width="4"/>
+  <path d="M 30,60 L 30,30 L 60,30" fill="none" stroke="#A52A2A" stroke-width="4"/>
+  <path d="M 340,30 L 370,30 L 370,60" fill="none" stroke="#A52A2A" stroke-width="4"/>
+  <path d="M 30,340 L 30,370 L 60,370" fill="none" stroke="#A52A2A" stroke-width="4"/>
+  <path d="M 340,370 L 370,370 L 370,340" fill="none" stroke="#A52A2A" stroke-width="4"/>
 
   <!-- QR Finder Patterns (Top-Left, Top-Right, Bottom-Left) -->
   <!-- TL -->
-  <rect x="50" y="50" width="80" height="80" rx="10" fill="none" stroke="#00f0ff" stroke-width="8" filter="url(#qrGlow)"/>
-  <rect x="70" y="70" width="40" height="40" rx="4" fill="#00f0ff"/>
+  <rect x="50" y="50" width="80" height="80" rx="10" fill="none" stroke="#A52A2A" stroke-width="8" filter="url(#qrGlow)"/>
+  <rect x="70" y="70" width="40" height="40" rx="4" fill="#A52A2A"/>
 
   <!-- TR -->
-  <rect x="270" y="50" width="80" height="80" rx="10" fill="none" stroke="#ff0055" stroke-width="8" filter="url(#qrGlow)"/>
-  <rect x="290" y="70" width="40" height="40" rx="4" fill="#ff0055"/>
+  <rect x="270" y="50" width="80" height="80" rx="10" fill="none" stroke="#6C403E" stroke-width="8" filter="url(#qrGlow)"/>
+  <rect x="290" y="70" width="40" height="40" rx="4" fill="#6C403E"/>
 
   <!-- BL -->
-  <rect x="50" y="270" width="80" height="80" rx="10" fill="none" stroke="#00f0ff" stroke-width="8" filter="url(#qrGlow)"/>
-  <rect x="70" y="290" width="40" height="40" rx="4" fill="#00f0ff"/>
+  <rect x="50" y="270" width="80" height="80" rx="10" fill="none" stroke="#A52A2A" stroke-width="8" filter="url(#qrGlow)"/>
+  <rect x="70" y="290" width="40" height="40" rx="4" fill="#A52A2A"/>
 
   <!-- Simulated Cyber Data Grid Elements -->
-  <g fill="#00f0ff" opacity="0.9">
+  <g fill="#A52A2A" opacity="0.9">
     <rect x="150" y="50" width="16" height="16" rx="2"/>
     <rect x="180" y="50" width="32" height="16" rx="2"/>
     <rect x="230" y="50" width="16" height="32" rx="2"/>
@@ -48,7 +48,7 @@
     <rect x="240" y="100" width="16" height="48" rx="2"/>
   </g>
 
-  <g fill="#ff0055" opacity="0.85">
+  <g fill="#6C403E" opacity="0.85">
     <rect x="50" y="150" width="16" height="48" rx="2"/>
     <rect x="80" y="150" width="32" height="16" rx="2"/>
     <rect x="114" y="180" width="48" height="16" rx="2"/>
@@ -75,13 +75,13 @@
   </g>
 
   <!-- Center Badge / Arenium Core -->
-  <rect x="150" y="150" width="100" height="100" rx="14" fill="#07060f" stroke="url(#qrGrad)" stroke-width="4" filter="url(#qrGlow)"/>
-  <circle cx="200" cy="200" r="32" fill="#0d0b1a" stroke="#00f0ff" stroke-width="2"/>
-  <text x="200" y="196" font-family="'Orbitron', sans-serif" font-size="14" font-weight="900" fill="#00f0ff" text-anchor="middle">ARENIUM</text>
-  <text x="200" y="215" font-family="'Orbitron', sans-serif" font-size="16" font-weight="900" fill="#ff0055" text-anchor="middle">'27</text>
+  <rect x="150" y="150" width="100" height="100" rx="14" fill="#090505" stroke="url(#qrGrad)" stroke-width="4" filter="url(#qrGlow)"/>
+  <circle cx="200" cy="200" r="32" fill="#0d0b1a" stroke="#A52A2A" stroke-width="2"/>
+  <text x="200" y="196" font-family="'Orbitron', sans-serif" font-size="14" font-weight="900" fill="#A52A2A" text-anchor="middle">ARENIUM</text>
+  <text x="200" y="215" font-family="'Orbitron', sans-serif" font-size="16" font-weight="900" fill="#6C403E" text-anchor="middle">'27</text>
   <text x="200" y="232" font-family="'JetBrains Mono', monospace" font-size="7" fill="#ffe600" text-anchor="middle">SOIS // BENGALURU</text>
 
   <!-- Cyber Sub-grid Lines -->
-  <line x1="30" y1="200" x2="135" y2="200" stroke="#00f0ff" stroke-dasharray="2, 6" opacity="0.4"/>
-  <line x1="265" y1="200" x2="370" y2="200" stroke="#ff0055" stroke-dasharray="2, 6" opacity="0.4"/>
+  <line x1="30" y1="200" x2="135" y2="200" stroke="#A52A2A" stroke-dasharray="2, 6" opacity="0.4"/>
+  <line x1="265" y1="200" x2="370" y2="200" stroke="#6C403E" stroke-dasharray="2, 6" opacity="0.4"/>
 </svg>

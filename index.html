@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -33,38 +35,57 @@
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2027P">
 </head>
 <body>
+  <div class="bg-parallax-backdrop" aria-hidden="true"></div>
+  <div class="bg-atmospheric-scrim" aria-hidden="true"></div>
 
-  <!-- ========================================================================
+    <!-- ========================================================================
        GLOBAL HEADER / NAVBAR
        ======================================================================== -->
   <header class="site-header" role="banner">
     <div class="container header-container">
       
-      <!-- Brand Logo & Wordmark -->
-      <a href="index.html" class="brand-link" aria-label="ARENIUM 27 Home">
-        <img src="images/logo.svg" alt="ARENIUM'27 Logo" class="brand-logo-img" width="160" height="40">
+      <!-- Brand Logo & Wordmark (Left side: Presidency University & ARENIUM'27) -->
+      <a href="index.html" class="brand-link" aria-label="Presidency University Home">
+        <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University" class="header-pu-logo" width="145" height="29">
       </a>
 
-      <!-- Mobile Navigation Hamburger -->
-      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+      <!-- Mobile Navigation & Theme Toggle -->
+      <div class="header-mobile-group">
+        <a href="index.html" class="mobile-header-fest-logo" aria-label="ARENIUM'27 Home">
+          <img src="images/logo-light.svg" alt="ARENIUM'27 Logo" width="115" height="30">
+        </a>
+        <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
 
-      <!-- Navigation Links -->
+      <!-- Navigation Links (Center) -->
       <nav id="primary-navigation" class="nav-menu" role="navigation">
         <div class="nav-item">
           <a href="index.html" class="nav-link active" aria-current="page">HOME</a>
         </div>
         <div class="nav-item">
           <a href="events.html" class="nav-link">EVENTS</a>
+        </div>
+        <div class="nav-item">
+          <a href="register.html" class="nav-link">REGISTER</a>
+        </div>
+        <div class="nav-item">
+          <a href="schedule.html" class="nav-link">SCHEDULE</a>
+        </div>
+        <div class="nav-item">
+          <a href="winners.html" class="nav-link">WINNERS</a>
+        </div>
+        <div class="nav-item">
+          <a href="certificate.html" class="nav-link">CERTIFICATES</a>
         </div>
         <div class="nav-item">
           <a href="gallery.html" class="nav-link">GALLERY</a>
@@ -85,8 +106,8 @@
               </a>
             </li>
             <li class="dropdown-item" role="none">
-              <a href="schedule.html" role="menuitem">
-                &gt; SCHEDULE_PAGE
+              <a href="events.html" role="menuitem">
+                &gt; EVENT_RULEBOOKS
               </a>
             </li>
           </ul>
@@ -96,19 +117,43 @@
           <a href="contact.html" class="nav-link">CONTACT</a>
         </div>
 
-        <!-- Mobile Register Button in Drawer -->
-        <div class="nav-item mobile-only" style="margin-top: 1rem; width: 100%;">
-          <a href="#" class="btn btn-register" style="width: 100%;" data-register-btn>REGISTER NOW</a>
+                <!-- Mobile Drawer Theme Switch -->
+        
+
+        <!-- Mobile Actions in Drawer -->
+        <div class="nav-item mobile-only mobile-action-group">
+          <a href="register.html" class="btn btn-register" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" data-register-btn>⚡ REGISTER NOW</a>
+          <a href="admin.html" class="btn btn-ghost" style="width: 100%; text-align: center; padding: 0.65rem 1rem; font-size: 0.8rem;" title="Fest Superadmin Dashboard">
+            ⚡ ADMIN PORTAL
+          </a>
         </div>
       </nav>
 
-      <!-- Desktop Header Register Action -->
+      <!-- Desktop Header Actions (Right side on desktop) -->
       <div class="header-action-desktop">
-        <a href="#" class="btn btn-register" data-register-btn>REGISTER NOW</a>
+        <a href="index.html" class="header-fest-logo-link" aria-label="ARENIUM'27 Home">
+          <img src="images/logo-light.svg" alt="ARENIUM'27 Logo" class="brand-logo-img header-fest-logo-img" width="135" height="36">
+        </a>
+        <a href="admin.html" class="btn btn-ghost" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;" title="Fest Superadmin Dashboard">
+          ⚡ ADMIN
+        </a>
+        <a href="register.html" class="btn btn-register" data-register-btn>REGISTER NOW</a>
       </div>
 
     </div>
   </header>
+
+  <!-- ========================================================================
+       MOVING NEON TICKER (PRIZE POOL 1.5L) — LOCATED DIRECTLY UNDER NAVBAR
+       ======================================================================== -->
+  <div class="cyber-ticker-wrap" role="complementary" aria-label="Prize Pool Announcement">
+    <div class="cyber-ticker-badge">⚡ PRIZE POOL</div>
+    <div class="cyber-ticker-track">
+      <div class="cyber-ticker-content" id="prize-ticker-content">
+        ⚡ TOTAL PRIZE POOL: <span class="cyber-ticker-highlight">₹1,50,000 (1.5 LAKHS)</span> // CASH PRIZES &amp; ACCREDITED MERIT CERTIFICATES ACROSS ALL TRACKS // REGISTRATIONS LIVE ⚡
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================================
        MAIN CONTENT
@@ -124,103 +169,122 @@
       <div class="hero-overlay-grid" aria-hidden="true"></div>
 
       <div class="container hero-content">
-        <!-- Fest Theme Pill -->
-        <div class="hero-theme-badge">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          <span>SOIS · PRESIDENCY UNIVERSITY · BENGALURU</span>
-        </div>
-
-        <!-- Giant Glitch Fest Title -->
-        <h1 class="glitch-title" data-text="ARENIUM'27">ARENIUM'27</h1>
-
-        <!-- 3-Part Tagline -->
-        <p class="hero-tagline">
-          <span class="tag-part">DISRUPT THE MATRIX</span>
-          <span class="tag-sep">//</span>
-          <span class="tag-part">IGNITE THE FUTURE</span>
-          <span class="tag-sep">//</span>
-          <span class="tag-part">ASCEND THE GRID</span>
-        </p>
-
-        <!-- Live Countdown Timer -->
-        <div class="countdown-container" aria-label="Event Countdown">
-          <div class="countdown-grid" id="countdown-grid">
-            <div class="countdown-box">
-              <div class="count-num" id="count-days">00</div>
-              <div class="count-label">DAYS</div>
-            </div>
-            <div class="countdown-box">
-              <div class="count-num" id="count-hours">00</div>
-              <div class="count-label">HOURS</div>
-            </div>
-            <div class="countdown-box">
-              <div class="count-num" id="count-mins">00</div>
-              <div class="count-label">MINS</div>
-            </div>
-            <div class="countdown-box">
-              <div class="count-num" id="count-secs">00</div>
-              <div class="count-label">SECS</div>
-            </div>
+        <!-- Apple-styled Atmospheric Hero Glass Card with Motion Backdrop -->
+        <div class="hero-main-glass-card reveal-on-scroll">
+          <div class="hero-motion-backdrop" aria-hidden="true">
+            <div class="motion-orb motion-orb-1"></div>
+            <div class="motion-orb motion-orb-2"></div>
+            <div class="motion-orb motion-orb-3"></div>
+            <div class="motion-mesh-shimmer"></div>
           </div>
 
-          <!-- When countdown reaches zero -->
-          <div class="countdown-live-banner" id="countdown-live-banner" role="status">
-            ⚡ EVENT IS LIVE NOW ⚡
+          <div class="hero-card-inner">
+            <!-- Presenter Banner -->
+            <div class="hero-presenter-banner">
+              <span class="hero-presenter-tag">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                PRESIDENCY SCHOOL OF INFORMATION SCIENCE PRESENTS
+              </span>
+            </div>
+
+            <!-- Giant Glitch Fest Title -->
+            <h1 class="glitch-title" data-text="ARENIUM'27">ARENIUM'27</h1>
+
+            <!-- Official Tagline -->
+            <p class="hero-tagline" style="letter-spacing: 4px;">
+              <span class="tag-part" >THE ARENA OF INNOVATION</span>
+            </p>
+            <p class="hero-subtagline">
+              INTER-COLLEGE TECH FEST
+            </p>
+
+            <!-- Live Countdown Timer -->
+            <div class="countdown-container" aria-label="Event Countdown">
+              <div class="countdown-grid" id="countdown-grid">
+                <div class="countdown-box">
+                  <div class="count-num" id="count-days">00</div>
+                  <div class="count-label">DAYS</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="count-num" id="count-hours">00</div>
+                  <div class="count-label">HOURS</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="count-num" id="count-mins">00</div>
+                  <div class="count-label">MINS</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="count-num" id="count-secs">00</div>
+                  <div class="count-label">SECS</div>
+                </div>
+              </div>
+
+              <!-- When countdown reaches zero -->
+              <div class="countdown-live-banner" id="countdown-live-banner" role="status">
+                ⚡ EVENT IS LIVE NOW ⚡
+              </div>
+            </div>
+
+            <!-- Event Date & University Badge -->
+            <div class="hero-date-badge">
+              <span>4–5 FEBRUARY 2027 · PRESIDENCY UNIVERSITY</span>
+            </div>
+
+            <!-- Hero Call to Action Buttons -->
+            <div class="hero-cta-group">
+              <a href="events.html" class="btn btn-primary">
+                <span>&gt; EXPLORE EVENTS</span>
+              </a>
+              <a href="register.html" class="btn btn-register" data-register-btn>
+                <span>REGISTER NOW</span>
+              </a>
+              <a href="rulebook.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                <span>&gt; RULEBOOK_PDF</span>
+              </a>
+            </div>
           </div>
-        </div>
-
-        <!-- Event Date Badge -->
-        <div class="hero-date-badge">
-          <span aria-hidden="true">📅</span>
-          <span>MARCH 26 – 27, 2027 · MAIN AUDITORIUM &amp; LAB BLOCKS</span>
-        </div>
-
-        <!-- Hero Call to Action Buttons -->
-        <div class="hero-cta-group">
-          <a href="events.html" class="btn btn-primary">
-            <span>&gt; EXPLORE EVENTS</span>
-          </a>
-          <a href="#" class="btn btn-register" data-register-btn>
-            <span>REGISTER NOW</span>
-          </a>
-          <a href="rulebook.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-            <span>&gt; RULEBOOK_PDF</span>
-          </a>
         </div>
       </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
-         2. ABOUT SECTION
+         2. ABOUT THE FEST SECTION
          ---------------------------------------------------------------------- -->
     <section class="about-section" id="about" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-header reveal-on-scroll">
           <span class="section-tag">[01 // PROTOCOL]</span>
-          <h2 class="section-title" id="about-heading">ABOUT THE FESTIVAL</h2>
-          <p class="section-subtitle">Where cutting-edge technology converges with collegiate creativity and competition.</p>
+          <h2 class="section-title" id="about-heading">ABOUT THE FEST</h2>
+          <p class="section-subtitle">The Arena of Innovation // Annual National Inter-College Tech Fest</p>
         </div>
 
         <div class="cyber-card about-card reveal-on-scroll">
           <p class="about-text">
-            <strong>ARENIUM'27</strong> is the premier annual national tech festival presented by the School of Information Science (SOIS) at Presidency University, Bengaluru. Designed as a high-octane proving ground, Arenium brings together coders, gamers, designers, innovators, and tech visionaries from across the nation to test their intellect and ignite digital transformation.
+            <strong>ARENIUM'27</strong> is the premier annual national tech festival presented by the <strong>Presidency School of Information Science (PSIS / SOIS)</strong> at <strong>Presidency University, Bengaluru</strong>. Designed as a high-octane proving ground under the theme <em>"The Arena of Innovation"</em>, Arenium convenes coders, innovators, developers, gamers, and tech visionaries from across the nation to test their intellect and ignite digital transformation.
           </p>
           <p class="about-text">
-            Immerse yourself in two adrenaline-fueled days of competitive coding battles, strategic LAN esports arenas, live cryptic treasure hunts, robotics and tech quizzes, creative design showdowns, and hands-on workshops guided by industry stalwarts. Whether you come to claim victory in the arenas or collaborate on revolutionary ideas, Arenium'27 is your portal to the next frontier of computing.
+            Taking place on <strong>4–5 February 2027</strong> at the Presidency University campus, the fest features 10 dynamic competitive arenas including the flagship 24-Hour Hackathon, Blind Coding (Code in the Dark), Technical Treasure Hunt (Tech Trail), UI/UX DesignX, Data to Deployment (Data Tales), Prompt to Prototype, Startup Pitchthon (TechTalk), Gaming Arena (Valorant, BGMI, COD), Arenium Premier League (APL), and the Techno-Organic Synthesis Fashion Show.
           </p>
 
           <div class="about-host-pill">
             HOSTED BY: <span>SCHOOL OF INFORMATION SCIENCE, PRESIDENCY UNIVERSITY, BENGALURU</span>
           </div>
 
+          <div class="host-institution-brand-card">
+            <a href="register.html" title="Click to Register for ARENIUM'27 - Presidency University">
+              <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University Bengaluru" class="pu-official-logo pu-logo-dark" style="max-width: 320px;">
+              <img src="images/presidency-university-logo-light.png?v=2027" alt="Presidency University Bengaluru" class="pu-official-logo pu-logo-light" style="max-width: 320px;">
+            </a>
+          </div>
+
           <!-- Quick Fest Highlights & Stats -->
           <div class="about-stats-grid">
             <div class="stat-item">
-              <div class="stat-number">12+</div>
+              <div class="stat-number">10</div>
               <div class="stat-label">COMPETITIVE ARENAS</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">₹1L+</div>
+              <div class="stat-number">₹1.5L</div>
               <div class="stat-label">PRIZE POOL &amp; AWARDS</div>
             </div>
             <div class="stat-item">
@@ -256,11 +320,12 @@
           <!-- Bottom bar with buttons & tags -->
           <div class="events-preview-footer">
             <div class="events-quick-tags">
+              <span class="quick-tag">#24H_Hackathon</span>
+              <span class="quick-tag">#BlindCoding</span>
               <span class="quick-tag">#LAN_Gaming</span>
-              <span class="quick-tag">#TechQuiz</span>
-              <span class="quick-tag">#QR_Hunt</span>
-              <span class="quick-tag">#ReelMaking</span>
-              <span class="quick-tag">#AI_Meme</span>
+              <span class="quick-tag">#UI_UX_Design</span>
+              <span class="quick-tag">#DataScience</span>
+              <span class="quick-tag">#Founders_Pitch</span>
             </div>
 
             <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
@@ -268,7 +333,7 @@
                 &gt; VIEW FULL SCHEDULE
               </a>
               <a href="events.html" class="btn btn-ghost">
-                &gt; BROWSE ALL 12+ EVENTS
+                &gt; BROWSE ALL 10 ARENAS
               </a>
             </div>
           </div>
@@ -288,28 +353,35 @@
             <img src="images/main-poster.svg" alt="ARENIUM'27 Official Poster - The Neon Ascent" width="800" height="1100" loading="lazy">
           </div>
 
-          <!-- Information & Gallery CTA -->
-          <div class="poster-info reveal-on-scroll">
-            <span class="section-tag">[03 // VISUAL ARCHIVE]</span>
-            <h3 id="poster-heading">OFFICIAL FESTIVAL POSTER</h3>
-            <p>
-              The official visual aesthetic of <strong>ARENIUM'27</strong> captures "The Neon Ascent" — reflecting the School of Information Science's vision of technology empowering human capability, synthesis, and creative exploration.
-            </p>
+          <!-- Information & Gallery CTA in Apple Atmospheric Glass Card -->
+          <div class="poster-info poster-info-glass-card cyber-card reveal-on-scroll">
+            <div class="poster-glass-motion-backdrop" aria-hidden="true">
+              <div class="motion-orb motion-orb-poster-1"></div>
+              <div class="motion-orb motion-orb-poster-2"></div>
+            </div>
 
-            <ul class="poster-meta-list">
-              <li><strong>THEME:</strong> The Neon Ascent // Human &amp; Cyber Synthesis</li>
-              <li><strong>VENUE:</strong> Presidency University Campus, Bengaluru</li>
-              <li><strong>ELIGIBILITY:</strong> Open to all undergraduate &amp; postgraduate students</li>
-              <li><strong>REGISTRATION:</strong> Online portal &amp; On-spot QR terminals</li>
-            </ul>
+            <div class="poster-info-inner">
+              <span class="section-tag">[03 // VISUAL ARCHIVE]</span>
+              <h3 id="poster-heading">OFFICIAL FESTIVAL POSTER</h3>
+              <p class="poster-description">
+                The official visual aesthetic of <strong>ARENIUM'27</strong> captures "The Neon Ascent" — reflecting the School of Information Science's vision of technology empowering human capability, synthesis, and creative exploration.
+              </p>
 
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="gallery.html" class="btn btn-primary">
-                &gt; VIEW GALLERY ARCHIVE
-              </a>
-              <a href="sponsors.html" class="btn btn-ghost">
-                &gt; OUR SPONSORS
-              </a>
+              <ul class="poster-meta-list">
+                <li><strong class="meta-label">THEME:</strong> <span class="meta-val">The Neon Ascent // Human &amp; Cyber Synthesis</span></li>
+                <li><strong class="meta-label">VENUE:</strong> <span class="meta-val">Presidency University Campus, Bengaluru</span></li>
+                <li><strong class="meta-label">ELIGIBILITY:</strong> <span class="meta-val">Open to all undergraduate &amp; postgraduate students</span></li>
+                <li><strong class="meta-label">REGISTRATION:</strong> <span class="meta-val">Online portal &amp; On-spot QR terminals</span></li>
+              </ul>
+
+              <div class="poster-cta-row">
+                <a href="gallery.html" class="btn btn-primary">
+                  &gt; VIEW GALLERY ARCHIVE
+                </a>
+                <a href="sponsors.html" class="btn btn-ghost">
+                  &gt; OUR SPONSORS
+                </a>
+              </div>
             </div>
           </div>
 
@@ -318,87 +390,170 @@
     </section>
 
     <!-- ----------------------------------------------------------------------
-         5. TEAM STRIP SECTION
+         5. TEAM STRIP SECTION (ALIGNMENTS: TOP / MIDDLE / END)
          ---------------------------------------------------------------------- -->
     <section class="team-section" id="team" aria-labelledby="team-heading">
       <div class="container">
         <div class="section-header reveal-on-scroll">
           <span class="section-tag">[04 // CORE CREW]</span>
           <h2 class="section-title" id="team-heading">ORGANISING COMMITTEE</h2>
-          <p class="section-subtitle">The visionaries, mentors, and student leaders orchestrating ARENIUM'27.</p>
+          <p class="section-subtitle">The visionary leadership, coordinators, and faculty organisation orchestrating ARENIUM'27.</p>
         </div>
 
-        <!-- Student Coordinators -->
-        <h3 class="team-group-title reveal-on-scroll">STUDENT COORDINATORS</h3>
-        <div class="team-grid reveal-on-scroll">
+        <!-- ==========================================
+             1. TOP: UNIVERSITY LEADERSHIP & PATRONS
+             ========================================== -->
+        <div class="team-tier-block reveal-on-scroll">
+          <div class="team-tier-header">
+            <span class="team-tier-badge">TIER 01 // PATRONS</span>
+            <h3 class="team-group-title" style="margin: 0.4rem 0;">UNIVERSITY LEADERSHIP</h3>
+            <p class="team-tier-desc">Pro VC · VC · Dean · HOD · Head of UG Programmes</p>
+          </div>
           
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">LEAD COORDINATOR</div>
-            <h4 class="team-name">Kaushal Kumar</h4>
-            <div class="team-role">Student Coordinator · SOIS</div>
-            <!-- Contact Number 1 (Replace/assign phone mapping as needed) -->
-            <a href="tel:+919108740761" class="team-phone-link" aria-label="Call Kaushal Kumar">
-              <span>📞</span> +91 91087 40761
-            </a>
-          </div>
+          <div class="team-grid team-grid-leadership" data-leadership-grid>
+            <!-- 1. Pro VC -->
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/leader-provc.svg" alt="Dr. Vidya Shetty" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">PATRON / PRO VC</div>
+              <h4 class="team-name">Dr. Vidya Shetty</h4>
+              <div class="team-role">Pro Vice-Chancellor · Presidency University</div>
+              <p class="team-card-desc">
+                Guiding institutional growth, research initiatives, and academic excellence.
+              </p>
+            </div>
 
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">COORDINATOR</div>
-            <h4 class="team-name">Ashlin</h4>
-            <div class="team-role">Student Coordinator · SOIS</div>
-            <!-- Contact Number 2 (Replace/assign phone mapping as needed) -->
-            <a href="tel:+918797686786" class="team-phone-link" aria-label="Call Ashlin">
-              <span>📞</span> +91 87976 86786
-            </a>
-          </div>
+            <!-- 2. VC -->
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/leader-vc.svg" alt="Dr. S. J. Thiruvengadam" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">CHIEF PATRON / VC</div>
+              <h4 class="team-name">Dr. S. J. Thiruvengadam</h4>
+              <div class="team-role">Vice-Chancellor · Presidency University</div>
+              <p class="team-card-desc">
+                Leading Presidency University's strategic vision, global partnerships, and innovation.
+              </p>
+            </div>
 
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">COORDINATOR</div>
-            <h4 class="team-name">Abhyas Kathuria</h4>
-            <div class="team-role">Student Coordinator · SOIS</div>
-            <!-- Contact Number 3 (Replace/assign phone mapping as needed) -->
-            <a href="tel:+918595848421" class="team-phone-link" aria-label="Call Abhyas Kathuria">
-              <span>📞</span> +91 85958 48421
-            </a>
-          </div>
+            <!-- 3. Dean -->
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/leader-dean.svg" alt="Dr. C. Kalaiarasan" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">PATRON / DEAN</div>
+              <h4 class="team-name">Dr. C. Kalaiarasan</h4>
+              <div class="team-role">Dean · School of Information Science</div>
+              <p class="team-card-desc">
+                Guiding academic innovation, faculty research, and technical symposiums at SOIS.
+              </p>
+            </div>
 
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">COORDINATOR</div>
-            <h4 class="team-name">Vimal</h4>
-            <div class="team-role">Student Coordinator · SOIS</div>
-            <!-- Contact Number 4 (Replace/assign phone mapping as needed) -->
-            <a href="tel:+919620192249" class="team-phone-link" aria-label="Call Vimal">
-              <span>📞</span> +91 96201 92249
-            </a>
-          </div>
+            <!-- 4. HOD -->
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/leader-hod.svg" alt="Dr. K. G. Mohan" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">HEAD OF DEPARTMENT</div>
+              <h4 class="team-name">Dr. K. G. Mohan</h4>
+              <div class="team-role">HOD · School of Information Science</div>
+              <p class="team-card-desc">
+                Fostering competitive coding, student development, and technical curriculum standards.
+              </p>
+            </div>
 
+            <!-- 5. UG Head -->
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/leader-ug.svg" alt="Dr. Vetrimani Elangovan" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">HEAD - UG PROGRAMMES</div>
+              <h4 class="team-name">Dr. Vetrimani Elangovan</h4>
+              <div class="team-role">Head of UG Programmes · PSIS</div>
+              <p class="team-card-desc">
+                Directing undergraduate computing specializations, student mentoring, and fest operations.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- Organisers & Programme Organiser -->
-        <h3 class="team-group-title reveal-on-scroll">FACULTY ORGANISERS &amp; PROGRAMME LEAD</h3>
-        <div class="team-grid reveal-on-scroll">
-          
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">PATRON / DEAN</div>
-            <h4 class="team-name">Mahalaxmi</h4>
-            <div class="team-role">Dean · School of Information Science</div>
+        <!-- ==========================================
+             2. MIDDLE: COORDINATION & STUDENT MANAGEMENT
+             ========================================== -->
+        <div class="team-tier-block reveal-on-scroll" style="margin-top: var(--space-2xl);">
+          <div class="team-tier-header">
+            <span class="team-tier-badge">TIER 02 // OPERATIONS</span>
+            <h3 class="team-group-title" style="margin: 0.4rem 0;">COORDINATION &amp; STUDENT LEADERSHIP</h3>
+            <p class="team-tier-desc">Faculty Co-ordinator &amp; Programme Lead and Student Coordinators</p>
           </div>
 
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">HEAD OF DEPARTMENT</div>
-            <h4 class="team-name">Vertimani Elgonva</h4>
-            <div class="team-role">HOD · School of Information Science</div>
+          <!-- Faculty Coordinator & Program Lead Showcase -->
+          <div class="cyber-card team-card" style="max-width: 520px; margin: 0 auto 1.5rem;">
+            <div class="team-photo-wrap" style="height: 190px;">
+              <img src="images/leader-organiser.svg" alt="Ms. Keren Lois Daniel" class="team-avatar-img" loading="lazy">
+            </div>
+            <div class="team-card-tag">FACULTY CO-ORDINATOR &amp; PROGRAMME LEAD</div>
+            <h4 class="team-name" style="font-size: 1.25rem;">Ms. Keren Lois Daniel</h4>
+            <div class="team-role">Assistant Professor &amp; Programme Organiser · Arenium'27</div>
+            <p class="team-card-desc">
+              Directing overall festival choreography, academic liaison, and student committee execution.
+            </p>
           </div>
 
-          <div class="cyber-card team-card">
-            <div class="team-card-tag">PROGRAMME ORGANISER</div>
-            <h4 class="team-name">Keren Lios Daniel</h4>
-            <div class="team-role">Programme Organiser · Arenium'27</div>
-          </div>
+          <!-- Student Coordinators Grid -->
+          <div class="team-grid" data-student-coords-grid>
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/coord-kaushal.svg" alt="Kaushal Kumar Singh" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">FINANCE &amp; REGISTRATION MANAGER</div>
+              <h4 class="team-name">Kaushal Kumar Singh</h4>
+              <div class="team-role">5BCA01 (20241BCA0051) · SOIS</div>
+              <a href="tel:+919108740761" class="team-phone-link" aria-label="Call Kaushal Kumar Singh">
+                <span>📞</span> +91 91087 40761
+              </a>
+            </div>
 
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/coord-vimal.svg" alt="Vimal Raj" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">EVENT MANAGER</div>
+              <h4 class="team-name">Vimal Raj</h4>
+              <div class="team-role">5BCADS02 · SOIS</div>
+              <a href="tel:+919620192249" class="team-phone-link" aria-label="Call Vimal Raj">
+                <span>📞</span> +91 96201 92249
+              </a>
+            </div>
+
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/coord-ashlin.svg" alt="Ashlin Siddharth" class="team-avatar-img" loading="lazy">
+              </div>
+              <div class="team-card-tag">MARKETING &amp; REGISTRATION MANAGER</div>
+              <h4 class="team-name">Ashlin Siddharth</h4>
+              <div class="team-role">5BCADS01 · SOIS</div>
+              <a href="tel:+918797686786" class="team-phone-link" aria-label="Call Ashlin Siddharth">
+                <span>📞</span> +91 87976 86786
+              </a>
+            </div>
+
+            <div class="cyber-card team-card">
+              <div class="team-photo-wrap">
+                <img src="images/ABHYAS.png" alt="Abhyas Kathuria" class="team-avatar-img" loading="lazy" style="object-position: center top;">
+              </div>
+              <div class="team-card-tag">TECHNICAL MANAGER</div>
+              <h4 class="team-name">Abhyas Kathuria</h4>
+              <div class="team-role">5BCAAIML01 · SOIS</div>
+              <a href="tel:+918595848421" class="team-phone-link" aria-label="Call Abhyas Kathuria">
+                <span>📞</span> +91 85958 48421
+              </a>
+            </div>
+          </div>
         </div>
 
-      </div>
+        </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
@@ -430,7 +585,7 @@
           </div>
 
           <div>
-            <a href="#" class="btn btn-register" style="padding: 0.9rem 2.2rem; font-size: 1rem;" data-register-btn>
+            <a href="register.html" class="btn btn-register" style="padding: 0.9rem 2.2rem; font-size: 1rem;" data-register-btn>
               REGISTER NOW ONLINE
             </a>
           </div>
@@ -461,6 +616,13 @@
           </p>
           <div class="footer-host-tag">
             School of Information Science · Presidency University, Bengaluru
+          </div>
+
+          <div class="footer-institution-badge">
+            <a href="https://presidencyuniversity.in" target="_blank" rel="noopener noreferrer" title="Presidency University, Bengaluru">
+              <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University Bengaluru" class="footer-pu-logo pu-logo-dark" width="220" height="40">
+              <img src="images/presidency-university-logo-light.png?v=2027" alt="Presidency University Bengaluru" class="footer-pu-logo pu-logo-light" width="220" height="40">
+            </a>
           </div>
 
           <!-- Social Icons -->
@@ -553,6 +715,6 @@
   </footer>
 
   <!-- Master JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2027P"></script>
 </body>
 </html>

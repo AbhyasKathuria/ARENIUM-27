@@ -1,0 +1,20 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary test / verification files
+verify_*.png
+test_*.html

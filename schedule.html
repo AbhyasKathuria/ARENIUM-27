@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,30 +23,56 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2027P">
 </head>
 <body>
+  <div class="bg-parallax-backdrop" aria-hidden="true"></div>
+  <div class="bg-atmospheric-scrim" aria-hidden="true"></div>
 
   <!-- GLOBAL HEADER -->
+    <!-- ========================================================================
+       GLOBAL HEADER / NAVBAR
+       ======================================================================== -->
   <header class="site-header" role="banner">
     <div class="container header-container">
-      <a href="index.html" class="brand-link" aria-label="ARENIUM 27 Home">
-        <img src="images/logo.svg" alt="ARENIUM'27 Logo" class="brand-logo-img" width="160" height="40">
+      
+      <!-- Brand Logo & Wordmark (Left side: Presidency University & ARENIUM'27) -->
+      <a href="index.html" class="brand-link" aria-label="Presidency University Home">
+        <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University" class="header-pu-logo" width="145" height="29">
       </a>
 
-      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+      <!-- Mobile Navigation & Theme Toggle -->
+      <div class="header-mobile-group">
+        <a href="index.html" class="mobile-header-fest-logo" aria-label="ARENIUM'27 Home">
+          <img src="images/logo-light.svg" alt="ARENIUM'27 Logo" width="115" height="30">
+        </a>
+        <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
 
+      <!-- Navigation Links (Center) -->
       <nav id="primary-navigation" class="nav-menu" role="navigation">
         <div class="nav-item">
           <a href="index.html" class="nav-link">HOME</a>
         </div>
         <div class="nav-item">
+          <a href="register.html" class="nav-link">REGISTER</a>
+        </div>
+        <div class="nav-item">
           <a href="events.html" class="nav-link">EVENTS</a>
+        </div>
+        <div class="nav-item">
+          <a href="schedule.html" class="nav-link active" aria-current="page">SCHEDULE</a>
+        </div>
+        <div class="nav-item">
+          <a href="winners.html" class="nav-link">WINNERS</a>
+        </div>
+        <div class="nav-item">
+          <a href="certificate.html" class="nav-link">CERTIFICATES</a>
         </div>
         <div class="nav-item">
           <a href="gallery.html" class="nav-link">GALLERY</a>
@@ -62,7 +90,7 @@
               <a href="rulebook.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">&gt; RULEBOOK_PDF</a>
             </li>
             <li class="dropdown-item" role="none">
-              <a href="schedule.html" class="active" role="menuitem">&gt; SCHEDULE_PAGE</a>
+              <a href="events.html" role="menuitem">&gt; EVENT_RULEBOOKS</a>
             </li>
           </ul>
         </div>
@@ -71,16 +99,39 @@
           <a href="contact.html" class="nav-link">CONTACT</a>
         </div>
 
-        <div class="nav-item mobile-only" style="margin-top: 1rem; width: 100%;">
-          <a href="#" class="btn btn-register" style="width: 100%;" data-register-btn>REGISTER NOW</a>
+        <div class="nav-item mobile-only mobile-action-group">
+          <a href="#" class="btn btn-register" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" data-register-btn>⚡ REGISTER NOW</a>
+          <a href="admin.html" class="btn btn-ghost" style="width: 100%; text-align: center; padding: 0.65rem 1rem; font-size: 0.8rem;" title="Fest Superadmin Dashboard">
+            ⚡ ADMIN PORTAL
+          </a>
         </div>
       </nav>
 
+      <!-- Desktop Header Actions (Right side on desktop) -->
       <div class="header-action-desktop">
+        <a href="index.html" class="header-fest-logo-link" aria-label="ARENIUM'27 Home">
+          <img src="images/logo-light.svg" alt="ARENIUM'27 Logo" class="brand-logo-img header-fest-logo-img" width="135" height="36">
+        </a>
+        <a href="admin.html" class="btn btn-ghost" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;" title="Fest Superadmin Dashboard">
+          ⚡ ADMIN
+        </a>
         <a href="#" class="btn btn-register" data-register-btn>REGISTER NOW</a>
       </div>
+
     </div>
   </header>
+
+  <!-- ========================================================================
+       MOVING NEON TICKER (PRIZE POOL 1.5L) — LOCATED DIRECTLY UNDER NAVBAR
+       ======================================================================== -->
+  <div class="cyber-ticker-wrap" role="complementary" aria-label="Prize Pool Announcement">
+    <div class="cyber-ticker-badge">⚡ PRIZE POOL</div>
+    <div class="cyber-ticker-track">
+      <div class="cyber-ticker-content" id="prize-ticker-content">
+        ⚡ TOTAL PRIZE POOL: <span class="cyber-ticker-highlight">₹1,50,000 (1.5 LAKHS)</span> // CASH PRIZES &amp; ACCREDITED MERIT CERTIFICATES ACROSS ALL TRACKS // REGISTRATIONS LIVE ⚡
+      </div>
+    </div>
+  </div>
 
   <!-- MAIN CONTENT -->
   <main id="main-content">
@@ -97,8 +148,8 @@
         <!-- Day Tabs -->
         <div class="schedule-tabs" role="tablist" aria-label="Schedule Day Tabs">
           <button class="schedule-tab-btn active" data-day="all" role="tab" aria-selected="true">[ALL TIMELINES]</button>
-          <button class="schedule-tab-btn" data-day="Day 1" role="tab" aria-selected="false">[DAY 01 // MARCH 26]</button>
-          <button class="schedule-tab-btn" data-day="Day 2" role="tab" aria-selected="false">[DAY 02 // MARCH 27]</button>
+          <button class="schedule-tab-btn" data-day="Day 1" role="tab" aria-selected="false">[DAY 01 // 4 FEB 2027]</button>
+          <button class="schedule-tab-btn" data-day="Day 2" role="tab" aria-selected="false">[DAY 02 // 5 FEB 2027]</button>
         </div>
       </div>
     </section>
@@ -115,16 +166,25 @@
         <noscript>
           <div class="cyber-card" style="text-align: center; margin-top: 2rem;">
             <p style="color: var(--neon-yellow); margin-bottom: 1rem;">
-              JavaScript is required for interactive tab switching. Static timetable overview:
+              JavaScript is required for interactive tab switching and timeline filtering. Official Timetable Overview:
             </p>
-            <ul style="list-style: none; line-height: 2; color: #ffffff;">
-              <li><strong>Day 1 (09:00 - 10:30 AM):</strong> Grand Opening &amp; Keynote — Main Auditorium</li>
-              <li><strong>Day 1 (11:00 AM - 01:30 PM):</strong> Tech Matrix Quiz — SOIS Lab Block 3</li>
-              <li><strong>Day 1 (02:00 - 05:00 PM):</strong> Campus QR Treasure Hunt — Central Campus</li>
-              <li><strong>Day 1 (02:30 - 06:00 PM):</strong> LAN Arena Qualifiers — Gaming Hub</li>
-              <li><strong>Day 2 (09:30 AM - 12:30 PM):</strong> E-Waste Sculptor &amp; AI Meme Battle — Exhibition Concourse</li>
-              <li><strong>Day 2 (01:00 - 04:00 PM):</strong> LAN Arena Finals — Main Stage</li>
-              <li><strong>Day 2 (04:30 - 06:30 PM):</strong> Valedictory Ceremony — Main Auditorium</li>
+            <ul style="list-style: none; line-height: 2; color: #ffffff; text-align: left; max-width: 750px; margin: 0 auto;">
+              <li><strong>Day 1 // 4 Feb (09:30 - 10:30 AM):</strong> Grand Inaugural Ceremony &amp; Lamp Lighting — Main Auditorium</li>
+              <li><strong>Day 1 // 4 Feb (10:30 AM - 24 Hours):</strong> TECHNOVA '27 (24-Hour Non-stop Hackathon) Flagoff — Central Computing Lab</li>
+              <li><strong>Day 1 // 4 Feb (10:45 AM - 01:00 PM):</strong> TECH ODYSSEY (Clue Hunt &amp; Bug Spotting) — SOIS Lab 02 &amp; Campus</li>
+              <li><strong>Day 1 // 4 Feb (11:00 AM - 01:00 PM):</strong> SHADOWCODE (Blindfold Code Sprint) — SOIS Lab 01</li>
+              <li><strong>Day 1 // 4 Feb (01:00 - 02:00 PM):</strong> Official Networking &amp; Lunch Pause</li>
+              <li><strong>Day 1 // 4 Feb (02:00 - 05:30 PM):</strong> QUAD DAMAGE (Valorant &amp; BGMI LAN Prelims) — DJL01 / SH4</li>
+              <li><strong>Day 1 // 4 Feb (02:00 - 04:30 PM):</strong> DESIGNNOVA (UI/UX Design Sprint &amp; Prototype Arena) — Design Studio</li>
+              <li><strong>Day 1 // 4 Feb (04:30 - 06:00 PM):</strong> TECHTALK (Keynote &amp; Research Symposium) — Seminar Hall 1</li>
+              <li><strong>Day 1 // 4 Feb (04:30 - 06:30 PM):</strong> FOUNDERS' ARENA (Startup Pitch Deck) — Seminar Hall 1</li>
+              <li><strong>Day 2 // 5 Feb (09:30 - 11:30 AM):</strong> DATACHRONICLES (Data Modeling &amp; Insights) — SOIS Lab 03</li>
+              <li><strong>Day 2 // 5 Feb (10:30 AM - 12:30 PM):</strong> TECHNOVA '27 Hackathon Sprint Submission &amp; Jury Evaluation</li>
+              <li><strong>Day 2 // 5 Feb (11:30 AM - 02:30 PM):</strong> QUAD DAMAGE (Esports Championship Grand Finals) — Main Stage</li>
+              <li><strong>Day 2 // 5 Feb (01:00 - 02:00 PM):</strong> Official Lunch Pause</li>
+              <li><strong>Day 2 // 5 Feb (02:00 - 03:30 PM):</strong> APL (Arenium Premier League - Brand Auction) — Management Amphitheatre</li>
+              <li><strong>Day 2 // 5 Feb (03:30 - 05:00 PM):</strong> BIOCHROMA (Tech × Nature Runway Spectacle) — Main Open Stage</li>
+              <li><strong>Day 2 // 5 Feb (05:00 - 06:30 PM):</strong> Grand Valedictory Ceremony &amp; ₹1.5L Prize Handover — Main Auditorium</li>
             </ul>
           </div>
         </noscript>
@@ -158,6 +218,13 @@
           </p>
           <div class="footer-host-tag">
             School of Information Science · Presidency University, Bengaluru
+          </div>
+
+          <div class="footer-institution-badge">
+            <a href="https://presidencyuniversity.in" target="_blank" rel="noopener noreferrer" title="Presidency University, Bengaluru">
+              <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University Bengaluru" class="footer-pu-logo pu-logo-dark" width="220" height="40">
+              <img src="images/presidency-university-logo-light.png?v=2027" alt="Presidency University Bengaluru" class="footer-pu-logo pu-logo-light" width="220" height="40">
+            </a>
           </div>
           <div class="footer-social-row" aria-label="Social media links">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="Instagram">
@@ -222,6 +289,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2027P"></script>
 </body>
 </html>

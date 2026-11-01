@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -22,30 +24,55 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2027P">
 </head>
 <body>
+  <div class="bg-parallax-backdrop" aria-hidden="true"></div>
+  <div class="bg-atmospheric-scrim" aria-hidden="true"></div>
 
-  <!-- GLOBAL HEADER -->
+    <!-- ========================================================================
+       GLOBAL HEADER / NAVBAR
+       ======================================================================== -->
   <header class="site-header" role="banner">
     <div class="container header-container">
-      <a href="index.html" class="brand-link" aria-label="ARENIUM 27 Home">
-        <img src="images/logo.svg" alt="ARENIUM'27 Logo" class="brand-logo-img" width="160" height="40">
+      
+      <!-- Brand Logo & Wordmark (Left side: Presidency University & ARENIUM'27) -->
+      <a href="index.html" class="brand-link" aria-label="Presidency University Home">
+        <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University" class="header-pu-logo" width="145" height="29">
       </a>
 
-      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+      <!-- Mobile Navigation & Theme Toggle -->
+      <div class="header-mobile-group">
+        <a href="index.html" class="mobile-header-fest-logo" aria-label="ARENIUM'27 Home">
+          <img src="images/logo-light.svg" alt="ARENIUM'27 Logo" width="115" height="30">
+        </a>
+        <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
 
+      <!-- Navigation Links (Center) -->
       <nav id="primary-navigation" class="nav-menu" role="navigation">
         <div class="nav-item">
           <a href="index.html" class="nav-link">HOME</a>
         </div>
         <div class="nav-item">
+          <a href="register.html" class="nav-link">REGISTER</a>
+        </div>
+        <div class="nav-item">
           <a href="events.html" class="nav-link active" aria-current="page">EVENTS</a>
+        </div>
+        <div class="nav-item">
+          <a href="schedule.html" class="nav-link">SCHEDULE</a>
+        </div>
+        <div class="nav-item">
+          <a href="winners.html" class="nav-link">WINNERS</a>
+        </div>
+        <div class="nav-item">
+          <a href="certificate.html" class="nav-link">CERTIFICATES</a>
         </div>
         <div class="nav-item">
           <a href="gallery.html" class="nav-link">GALLERY</a>
@@ -63,7 +90,7 @@
               <a href="rulebook.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">&gt; RULEBOOK_PDF</a>
             </li>
             <li class="dropdown-item" role="none">
-              <a href="schedule.html" role="menuitem">&gt; SCHEDULE_PAGE</a>
+              <a href="events.html" role="menuitem">&gt; EVENT_RULEBOOKS</a>
             </li>
           </ul>
         </div>
@@ -72,16 +99,39 @@
           <a href="contact.html" class="nav-link">CONTACT</a>
         </div>
 
-        <div class="nav-item mobile-only" style="margin-top: 1rem; width: 100%;">
-          <a href="#" class="btn btn-register" style="width: 100%;" data-register-btn>REGISTER NOW</a>
+        <div class="nav-item mobile-only mobile-action-group">
+          <a href="#" class="btn btn-register" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" data-register-btn>⚡ REGISTER NOW</a>
+          <a href="admin.html" class="btn btn-ghost" style="width: 100%; text-align: center; padding: 0.65rem 1rem; font-size: 0.8rem;" title="Fest Superadmin Dashboard">
+            ⚡ ADMIN PORTAL
+          </a>
         </div>
       </nav>
 
+      <!-- Desktop Header Actions (Right side on desktop) -->
       <div class="header-action-desktop">
+        <a href="index.html" class="header-fest-logo-link" aria-label="ARENIUM'27 Home">
+          <img src="images/logo-light.svg" alt="ARENIUM'27 Logo" class="brand-logo-img header-fest-logo-img" width="135" height="36">
+        </a>
+        <a href="admin.html" class="btn btn-ghost" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;" title="Fest Superadmin Dashboard">
+          ⚡ ADMIN
+        </a>
         <a href="#" class="btn btn-register" data-register-btn>REGISTER NOW</a>
       </div>
+
     </div>
   </header>
+
+  <!-- ========================================================================
+       MOVING NEON TICKER (PRIZE POOL 1.5L) — LOCATED DIRECTLY UNDER NAVBAR
+       ======================================================================== -->
+  <div class="cyber-ticker-wrap" role="complementary" aria-label="Prize Pool Announcement">
+    <div class="cyber-ticker-badge">⚡ PRIZE POOL</div>
+    <div class="cyber-ticker-track">
+      <div class="cyber-ticker-content" id="prize-ticker-content">
+        ⚡ TOTAL PRIZE POOL: <span class="cyber-ticker-highlight">₹1,50,000 (1.5 LAKHS)</span> // CASH PRIZES &amp; ACCREDITED MERIT CERTIFICATES ACROSS ALL TRACKS // REGISTRATIONS LIVE ⚡
+      </div>
+    </div>
+  </div>
 
   <!-- MAIN CONTENT -->
   <main id="main-content">
@@ -92,14 +142,17 @@
         <div class="breadcrumbs">&gt; ROOT // COMPETITIONS // MATRIX</div>
         <h1 class="page-title">EVENTS MATRIX</h1>
         <p class="section-subtitle">
-          Challenge your intellect, precision, and agility across our diverse pre-events and on-campus flagship championships.
+          The Arena of Innovation · 4–5 February 2027 · ₹1,50,000 Total Prize Pool across 10 official competitive tracks.
         </p>
 
         <!-- Filter Chips -->
         <div class="filter-chips-container" role="toolbar" aria-label="Event Categories Filter">
-          <button class="filter-chip active" data-filter="all">[ALL ARENAS]</button>
-          <button class="filter-chip" data-filter="pre">[PRE-EVENTS]</button>
-          <button class="filter-chip" data-filter="main">[MAIN EVENTS]</button>
+          <button class="filter-chip active" data-filter="all">[ALL ARENAS (10)]</button>
+          <button class="filter-chip" data-filter="technical">[TECHNICAL EVENTS (7)]</button>
+          <button class="filter-chip" data-filter="non-technical">[NON-TECHNICAL (3)]</button>
+          <button class="filter-chip" data-filter="day1">[DAY 01 // 4 FEB]</button>
+          <button class="filter-chip" data-filter="day2">[DAY 02 // 5 FEB]</button>
+          <button class="filter-chip" data-filter="hackathon">[24H HACKATHON]</button>
         </div>
       </div>
     </section>
@@ -108,23 +161,18 @@
     <section style="padding: var(--space-2xl) 0 var(--space-3xl);">
       <div class="container">
 
-        <!-- Pre-events Block -->
-        <div class="events-group-block" id="pre-events-block">
-          <h2 class="events-group-heading">
-            <span style="color: var(--neon-pink);">[01]</span> PRE-EVENTS &amp; DIGITAL SUBMISSIONS
-          </h2>
-          <div class="events-grid" id="pre-events-container">
-            <!-- Dynamically populated via main.js from EVENTS_DATA -->
-          </div>
-        </div>
-
-        <!-- Main Events Block -->
+        <!-- All Competitions Grid -->
         <div class="events-group-block" id="main-events-block">
-          <h2 class="events-group-heading">
-            <span style="color: var(--neon-cyan);">[02]</span> ON-CAMPUS MAIN ARENAS
-          </h2>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
+            <h2 class="events-group-heading" style="margin: 0;">
+              <span style="color: var(--neon-cyan);">[FLAGSHIP MATRIX]</span> OFFICIAL ARENIUM '27 ARENAS
+            </h2>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-yellow);">
+              ⚡ ₹1.5 LAKHS TOTAL CASH PRIZE POOL
+            </div>
+          </div>
           <div class="events-grid" id="main-events-container">
-            <!-- Dynamically populated via main.js from EVENTS_DATA -->
+            <!-- Dynamically populated via main.js from FestDB.events -->
           </div>
         </div>
 
@@ -132,11 +180,19 @@
         <noscript>
           <div class="cyber-card" style="text-align: center; margin-top: 2rem;">
             <p style="color: var(--neon-yellow); margin-bottom: 1rem;">
-              JavaScript is required for interactive grid filtering. Below is the list of official events:
+              JavaScript is required for interactive grid filtering and rulebook modal. Official 10 Fest Arenas (4–5 Feb 2027):
             </p>
-            <ul style="list-style: none; line-height: 2; color: #ffffff;">
-              <li>⚡ <strong>Pre-Events:</strong> Cyberpunk Photography, Neon Reel Runner, Digital Canvas 2027</li>
-              <li>🎮 <strong>Main Events:</strong> Tech Matrix Quiz, LAN Arena Championship, Campus QR Treasure Hunt, Retro Apex Racer, Emoji Cipher Charades, E-Waste Sculptor, AI Meme Battle</li>
+            <ul style="list-style: none; line-height: 2; color: #ffffff; text-align: left; max-width: 750px; margin: 0 auto;">
+              <li>⚡ <strong>TECH ODYSSEY:</strong> Follow the Clues. Crack the Code. Claim the Victory (Technical Event · ₹15,000)</li>
+              <li>💻 <strong>SHADOWCODE:</strong> Think Fast. Code Smart. Debug in the Dark (Technical Event · ₹15,000)</li>
+              <li>🎨 <strong>DESIGNNOVA:</strong> Imagine the Experience. Design the Future (Technical Event · ₹15,000)</li>
+              <li>🎤 <strong>TECHTALK:</strong> Research Today. Transform Tomorrow (Technical Event · ₹10,000)</li>
+              <li>📊 <strong>DATACHRONICLES:</strong> Discover the Story. Decode the Data. Deliver the Insight (Technical Event · ₹15,000)</li>
+              <li>🚀 <strong>FOUNDERS' ARENA:</strong> Think Big. Pitch Bold. Build What's Next (Technical Event · ₹18,000)</li>
+              <li>🔥 <strong>TECHNOVA '27:</strong> 24 Hours. One Mission. Limitless Innovation (24-Hour Flagship Hackathon · ₹22,500)</li>
+              <li>🎮 <strong>QUAD DAMAGE:</strong> Lock In. Level Up. Dominate (LAN Esports Championship · ₹20,000)</li>
+              <li>🌿 <strong>BIOCHROMA:</strong> Where Nature Meets Innovation, Style Becomes the Future (Non-Technical Runway · ₹15,000)</li>
+              <li>🏏 <strong>APL (ARENIUM PREMIER LEAGUE):</strong> Bid Smart. Think Big. Build Your Business Empire (Non-Technical Auction · ₹15,000)</li>
             </ul>
             <div style="margin-top: 1.5rem;">
               <a href="#" class="btn btn-register" data-register-btn>REGISTER NOW</a>
@@ -164,6 +220,13 @@
           </p>
           <div class="footer-host-tag">
             School of Information Science · Presidency University, Bengaluru
+          </div>
+
+          <div class="footer-institution-badge">
+            <a href="https://presidencyuniversity.in" target="_blank" rel="noopener noreferrer" title="Presidency University, Bengaluru">
+              <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University Bengaluru" class="footer-pu-logo pu-logo-dark" width="220" height="40">
+              <img src="images/presidency-university-logo-light.png?v=2027" alt="Presidency University Bengaluru" class="footer-pu-logo pu-logo-light" width="220" height="40">
+            </a>
           </div>
           <div class="footer-social-row" aria-label="Social media links">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="Instagram">
@@ -228,6 +291,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2027P"></script>
 </body>
 </html>

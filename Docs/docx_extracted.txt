@@ -1,0 +1,589 @@
+
+ARENIUM ’27
+The Arena of Innovation
+Event Taglines, Two-Day Event Flow, and Roles & Responsibilities
+Presidency School of Information Science |  Inter-college Tech Fest  |  4–5 February 2027  |  ~500 participants
+1. Events and Taglines
+Event
+Tagline
+Type
+Venue
+Tech Trail
+Technical Treasure Hunt
+Technical 
+AUD
+Code in the Dark — 
+Blind Coding / Programming Challenge
+Mini Hackathon
+
+DesignX
+UI/UX Design Challenge
+Paper Presentation
+SH2 (E Block), Day 1
+TechTalk / STARTUPSTARS — 
+Paper Presentation /Startup Pitching(PITCHTHON)
+Startup Pitching
+SH2 (E Block), Day 2
+Data Tales 
+Data To Deployment  
+Coding Challenge
+SH3 (F Block)
+Prompt to Prototype 
+Imagine It. Prompt It. Build It
+Project and Technology Expo
+SH4 (F Block), Day 1
+TechVerse
+Project Showcase
+Hackathon
+
+Old Prayer Hall (E Block, 4th Floor)
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Event Flow
+
+Day 1 (Thursday, 4 February 2027): Launch, Rounds and Presentations
+
+
+Time
+AUD
+Old Prayer Hall
+(E Block, 4th Floor)
+SH1
+(E Block)
+SH2
+(E Block)
+SH3
+(F Block)
+SH4
+(F Block)
+08:30–10:00
+Registration, ID check and kit distribution; guests received from 09:30
+
+
+
+
+
+10:00–11:30
+Arena Ignition (inauguration): lamp lighting, welcome, chief guest address, fest overview. Participants seated by 09:50
+
+
+
+
+
+11:30–13:00
+Arena Talks 1 (11:45–13:00): industry masterclass
+ByteBlitz kickoff at 11:30, problem statements released, build sprint
+Judges’ room and standby hall
+ThinkTank paper presentations, Session 1
+CodeClash Round 1
+TechVerse setup (11:30–12:00), judging (12:00–13:00)
+13:00–14:00
+Lunch break: no events in any venue. All venues closed and the ByteBlitz clock is paused
+
+
+
+
+
+14:00–15:00
+BrainByte written prelims
+ByteBlitz build sprint resumes
+Judges’ room and standby hall
+ThinkTank Session 2
+CodeClash Round 2 (semi-final)
+TechVerse open viewing for all participants
+15:00–15:15
+Evening tea break: no events in any venue. ByteBlitz paused
+
+
+
+
+
+15:15–16:15
+Arena Connect: networking with industry guests
+ByteBlitz build sprint continues
+Judges’ room and standby hall
+ThinkTank Session 3
+CodeClash Round 2 continues
+TechVerse open viewing
+16:15–16:45
+Shortlisting window: judges tally ThinkTank, CodeClash and TechVerse scores in SH1; finalists prepared
+
+
+
+
+
+16:45–17:15
+Day 1 wrap-up: finalists announced, Day 2 briefing
+
+
+
+
+
+17:15–17:45
+Hall reset: SH4 converted from expo to gaming arena. ByteBlitz teams may continue offline and return by 09:30
+
+
+
+
+
+Break rule: no events, rounds or sessions run during lunch (13:00–14:00) or evening tea (15:00–15:15) on either day. ByteBlitz is paused for both breaks.
+
+Day 2 (Friday, 5 February 2027): Finals, Winner Selection and Valedictory
+Time
+AUD
+Old Prayer Hall
+(E Block, 4th Floor)
+SH1
+(E Block)
+SH2
+(E Block)
+SH3
+(F Block)
+SH4
+(F Block)
+08:30–09:30
+Reporting and finalist briefing
+ByteBlitz teams report
+
+
+
+
+09:30–13:00
+BrainByte Finals (10:00–11:30), stage quiz with audience
+ByteBlitz final polish (09:30–11:00), demos and judging (11:00–13:00)
+Judges’ room and standby hall
+Venture Arena startup pitches
+CodeClash Finals (09:30–12:00)
+Pixel Showdown qualifiers and semi-finals
+13:00–14:00
+Lunch break: no events in any venue. All venues closed
+
+
+
+
+
+14:00–15:00
+Arena Talks 2: alumni and startup stories
+Judges review ByteBlitz scores
+Judges’ room and standby hall
+Judges review Venture Arena scores
+Judges review CodeClash scores
+Pixel Showdown Finals
+15:00–16:30
+Winner Selection Window (90 min): all events closed; participants take evening tea (15:00–15:15) and rest, and TechVerse stays open for viewing
+Judges finalize scores
+Scores verified here by faculty coordinators
+Judges finalize scores
+Judges finalize scores
+Judges finalize scores
+16:30–16:45
+Participants and guests take seats; sealed results handed to stage
+
+
+
+
+
+16:45–17:45
+Arena Crowning: results, prize distribution, vote of thanks
+
+
+
+
+
+17:45
+Closing, feedback forms, group photo
+
+
+
+
+
+
+Winner Selection Window (15:00–16:30)
+15:00–15:45: Judges complete scoring sheets and hand them to the event’s faculty coordinators.
+15:45–16:05: The event’s faculty coordinator and one Fest Coordination Committee member verify totals and resolve ties using the tie-break rule published before the event.
+16:05–16:20: The Fest Coordination Committee approves the winner list; the Certificates team finalizes names on certificates and trophies.
+16:20–16:30: Sealed results go to the emcee and the stage team.
+3. Inauguration Schedule: Arena Ignition (Day 1, 4 February 2027, Auditorium)
+Timing: 10:00–11:30 (90 minutes), with participants and guests seated by 09:50. Round 1 starts at 11:30. Theme: Let the Games Begin.
+
+INAUGURATION SCHEDULE
+
+Time
+Programme
+In Charge
+09:30–09:50
+Guests received at the entrance and escorted to the green room; participants and faculty seated in the Auditorium
+Hospitality team; Registration team; Discipline team
+10:00–10:05
+Welcome by the emcee; invocation / prayer song
+Emcee; cultural volunteers
+10:05–10:10
+Guests invited to the dais and welcomed with bouquets / saplings
+Hospitality team
+10:10–10:15
+Lamp lighting by the Chief Guest and dignitaries; opening of the fest
+Venue team; Fest Coordination Committee
+10:15–10:25
+Welcome address by the Dean / Head, School of Information Science
+Faculty coordinator
+10:25–10:40
+Curtain-raiser video of ARENIUM ’26 (3 min) and fest overview: events, venues, rules and the two-day schedule
+Student coordinator; Technical team; Media team
+10:40–10:50
+Address by the sponsor / industry partner representative
+Fest Coordination Committee
+10:50–11:15
+Chief Guest address
+Chief Guest
+11:15–11:20
+Felicitation of guests; recognition of sponsors and partners; release of fest brochure / poster
+Fest Coordination Committee; Marketing team
+11:20–11:25
+Vote of thanks by the student coordinator
+Student coordinator
+11:25–11:30
+Group photo with dignitaries on stage; participants move to their event venues in E Block and F Block for Round 1
+Media team; Student event coordinators; Discipline team
+
+Notes: keep the programme strictly to time, as Round 1 starts at 11:30 in all venues. Dignitaries’ names and designations should be given to the emcee and the Technical team a day before, for the stage backdrop and slides.
+4. Roles and Responsibilities
+Staffing Summary
+The fest runs with 40 students in total. Each of the 7 competitions (ByteBlitz, ThinkTank, Venture Arena, CodeClash, TechVerse, Pixel Showdown, BrainByte) has 1 faculty coordinator and 2 student coordinators: one final-year and one second-year student.
+
+
+Team
+Faculty
+Students
+Note
+Fest Coordination Committee
+2
+2
+1 final-year + 1 second-year student
+Event coordinators (7 events)
+7
+14
+Per event: 1 faculty + 1 final-year + 1 second-year student
+Marketing and Promotion
+1
+5
+
+Registration and Ticketing
+1
+4
+
+Catering and Refreshments
+1
+3
+
+Technical Support
+1
+5
+One student per active venue (AUD, Old Prayer Hall, SH2, SH3, SH4); SH1 covered as needed
+Venue and Infrastructure
+1
+3
+
+Hospitality and Guest Management
+1
+2
+
+Discipline and Security
+1
+0
+Works with university security staff
+First Aid and Emergency
+1
+0
+Works with university medical staff
+Photography, Videography and Documentation
+1
+2
+
+Certificates, Awards and Mementoes
+1
+0
+Supported by Registration team students
+Total
+19
+40
+59 members
+
+A. Core Leadership
+Team
+Responsibilities
+Strength
+Fest Coordination Committee
+Overall supervision; liaison between School, faculty, event teams and administration; monitor both days’ schedules; approve changes; approve the final winner list.
+4 (2 faculty + 2 students)
+Faculty Coordinator (per event)
+Supervise the event; approve requirements; enforce rules; collect judges’ sheets; verify scores with one Fest Committee member and resolve ties during the selection window.
+1 per event (7)
+Student Event Coordinators (per event)
+Final-year student: leads the event, liaises with judges and the faculty coordinator, hands over results sheets, keeps the finalist list. Second-year student: participant desk, rules and timekeeping, and guiding volunteers and participants in the hall.
+2 per event (14): 1 final-year + 1 second-year
+B. Registration and Outreach
+Team
+Responsibilities
+Strength
+Marketing and Promotion
+Social media campaigns, posters, reels; college outreach; sponsor visibility; live updates on both days; post-event highlights.
+1 faculty + 5 students
+Registration and Ticketing
+Online and on-site registration; ID verification; event-wise lists; passes and kits; Day 2 attendance check; help desk (from 08:30 on Day 1).
+1 faculty + 4 students
+C. Venue and Technical
+Team
+Responsibilities
+Strength
+Venue and Infrastructure
+Seating, tables, power points and signage in AUD, SH1–SH4 and the Old Prayer Hall (with extension boards for hackathon teams); keep SH1 ready as judges’ room; stage setup; directional signage and volunteers between E Block and F Block; close halls during lunch (13:00–14:00) and evening tea, and reopen them at 14:00 and 15:15; Day 1 evening conversion of SH4; hall resets.
+1 faculty + 3 students
+Technical Support
+Projectors, mics, speakers, Wi-Fi, power; quiz and scoring displays; one member stationed per venue; overnight check of equipment.
+1 faculty + 5 students (one per active venue)
+D. Hospitality and Catering
+Team
+Responsibilities
+Strength
+Hospitality and Guest Management
+Receive chief guest, speakers and judges; judges’ lounge for the selection window; escort between venues; mementoes.
+1 faculty + 2 students
+Catering and Refreshments
+Vendor coordination; lunch at 13:00 and evening tea at 15:00 on both days; counters for participants, judges and volunteers; ensure all participants, including ByteBlitz teams, take lunch and tea at the common breaks.
+1 faculty + 3 students
+E. Safety and Discipline
+Team
+Responsibilities
+Strength
+Discipline and Security
+Entry and exit control; crowd flow between venues; ID checks; keeping the exhibition and project area secure overnight.
+1 faculty + university security staff
+First Aid and Emergency
+First-aid desk both days; link with university medical facility; emergency contacts displayed in each hall.
+1 faculty/staff in-charge + university medical staff
+F. Media and Recognition
+Team
+Responsibilities
+Strength
+Photography, Videography and Documentation
+Coverage of inauguration, events, talks and prizes; social media content; post-event report.
+1 faculty + 2 students
+Certificates, Awards and Mementoes
+Prepare participation certificates in advance; fill in winner names during the selection window; arrange trophies and medals in order; distribute at Arena Crowning.
+1 faculty (supported by Registration team students)
+
+
+5. Points to Confirm
+
+Headcount: this plan uses 19 faculty + 40 students = 59 members, so the proposal’s figures (36 faculty + 70 students = 118, which actually sums to 106) need updating.
+
+Small team: ThinkTank and TechVerse finish on Day 1, while Venture Arena and Pixel Showdown run only on Day 2, so their coordinators can help with registration and hall duties on the other day.
+Food budget: ₹66,000 may not cover two days of tea and lunch for ~600 people.
+Venue table: update the requirements table to 4 seminar halls and 1 auditorium.
+
+ByteBlitz overnight: teams leave campus overnight; confirm this is allowed or end the sprint on Day 1.
+Old Prayer Hall (4th floor): confirm capacity, power points, Wi-Fi coverage, lift or stair access, and that the hall is cleared and available for ByteBlitz on both days.
+Stalls: the ₹20,000 stall revenue needs space outside these five venues, such as the auditorium foyer.
+
+
+ROLE AND RESPOSIBILITIES
+
+Faculty Name 
+Student Coordinator 
+DESIGNATION
+Class
+Phone Numbers
+Overall Coordination
+
+
+Ms. Keren Lois Daniel
+Kaushal Kumar Singh
+Finance & Registration Manager
+5BCA01
+20241BCA0051
+
+Vimal Raj
+Event Manager
+5BCADS02
+
+
+Ashlin Siddharth
+Marketing and Registration Manager
+5BCADS01
+
+
+Abhyas Kathuria
+Technical Manager
+5BCAAIML01
+
+Marketing and PR
+
+
+
+Ms Neha Arora
+Anjani Soni M
+Marketing Coordinator
+5BCADS01
+
+
+Rohit Roy
+Marketing Coordinator
+5BCA01
+
+
+Saswata Chatterjee
+Promotion Coordinator
+5BCA02
+
+
+Manas Kumar
+Promotion Coordinator
+5BCA02
+
+Discipline
+Mr Krishna Mishra 
+Hritik Raj
+Coordinator
+5BCA02
+
+Mr Dinesh N
+Vinayak Rathod
+Coordinator
+5BCA03
+
+
+Kawatilya 
+Coordinator
+5BCA01
+
+
+Ayush Ranjan
+Coordinator
+
+
+Decoration
+Ms Asha Hegde
+Ruchitha G
+Coordinator
+5BCADS01
+
+
+Kavya Shree P M
+Coordinator
+5BCADS01
+
+
+Nithyashree
+Coordinator
+5BCADS02
+
+
+Bindu 
+Coordinator
+5BCADS02
+
+Hospitality and Refreshment
+Ms. Nagma Fariyal
+Deepanita 
+Coordinator
+5BCADS02
+
+Ms. Anjana 
+Arati Rai
+Coordinator
+5BCADS02
+
+
+Manya Suresh
+Coordinator
+5BCA01
+
+
+Harshita Periwal
+Coordinator
+5BCA03
+
+Media
+Ms. Ghazala Zameer
+Vidyanshi Jain
+Coordinator
+5BCAAIML01
+
+Ms. Akasatha G R
+Tanmayee L
+Coordinator
+5BCADS01
+
+
+Kiran Kurien
+Coordinator
+5BCADS02
+
+Registration
+Ms. Devi S
+Shubham Kumar
+
+
+
+Ms. Kalpana K
+Anchal Rodrigues
+
+
+
+Mr Sudharshan
+Naneshwaran
+
+
+
+
+
+
+
+
+
+Rehana 
+
+
+
+Events
+Treasure Hunt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

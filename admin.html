@@ -1,0 +1,1225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>SUPERADMIN PORTAL | ARENIUM'27 | SOIS Presidency University</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2027P">
+
+  <style>
+    /* ========================================================================
+       SUPERADMIN BULLETPROOF GATEWAY AESTHETICS & CENTERING
+       ======================================================================== */
+    body#admin-app {
+      margin: 0;
+      padding: 0;
+      background: #05040a;
+      min-height: 100vh;
+      font-family: var(--font-mono, 'Roboto Slab', serif);
+      color: #fff;
+    }
+
+    #admin-lock-screen.admin-lock-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(16, 12, 34, 0.98) 0%, rgba(4, 3, 10, 1) 100%);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .admin-lock-card {
+      background: rgba(12, 10, 24, 0.96) !important;
+      border: 2px solid var(--neon-cyan, #A52A2A) !important;
+      box-shadow: 0 0 50px rgba(165, 42, 42, 0.25), inset 0 0 30px rgba(165, 42, 42, 0.06) !important;
+      border-radius: 12px !important;
+      width: 100% !important;
+      max-width: 520px !important;
+      margin: auto !important;
+      padding: 2.5rem 2rem !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+    }
+
+    .admin-lock-card::before,
+    .admin-lock-card::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--neon-pink, #ff0055);
+      pointer-events: none;
+    }
+    .admin-lock-card::before {
+      top: -2px; left: -2px;
+      border-right: none; border-bottom: none;
+    }
+    .admin-lock-card::after {
+      bottom: -2px; right: -2px;
+      border-left: none; border-top: none;
+    }
+
+    .admin-gateway-logo {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(165, 42, 42, 0.22) 0%, rgba(7, 6, 15, 0.9) 100%);
+      border: 2px solid var(--neon-cyan, #A52A2A);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 0 25px rgba(165, 42, 42, 0.45);
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .admin-gateway-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .admin-gateway-badge {
+      display: inline-block;
+      font-family: 'Roboto Slab', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--neon-pink, #ff0055);
+      border: 1px solid rgba(108, 64, 62, 0.4);
+      background: rgba(108, 64, 62, 0.08);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .admin-gateway-title {
+      font-family: var(--font-display, 'Roboto Slab', serif);
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.08em;
+      margin: 0 0 0.4rem;
+      text-shadow: 0 0 15px rgba(165, 42, 42, 0.5);
+    }
+
+    .admin-gateway-subtitle {
+      font-family: 'Roboto Slab', serif;
+      font-size: 0.82rem;
+      color: var(--text-secondary, #9aa4c2);
+      line-height: 1.5;
+      margin: 0 0 1.5rem;
+    }
+
+    .admin-passkey-box {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 1.2rem;
+      box-sizing: border-box;
+    }
+
+    .admin-passkey-glow {
+      width: 100% !important;
+      text-align: center !important;
+      font-family: var(--font-mono, 'Roboto Slab', serif) !important;
+      font-size: 1.4rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.18em !important;
+      color: #A52A2A !important;
+      background: rgba(6, 5, 14, 0.95) !important;
+      border: 2px solid #A52A2A !important;
+      border-radius: 8px !important;
+      padding: 1rem 3rem 1rem 3rem !important;
+      box-shadow: 0 0 25px rgba(165, 42, 42, 0.35), inset 0 0 15px rgba(165, 42, 42, 0.12) !important;
+      text-shadow: 0 0 12px rgba(165, 42, 42, 0.8) !important;
+      box-sizing: border-box !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .admin-passkey-glow::placeholder {
+      text-align: center !important;
+      color: rgba(165, 42, 42, 0.45) !important;
+      font-size: 1.05rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.1em !important;
+      text-shadow: 0 0 10px rgba(165, 42, 42, 0.35) !important;
+    }
+
+    .admin-passkey-glow:focus {
+      border-color: #ffffff !important;
+      box-shadow: 0 0 40px rgba(165, 42, 42, 0.8), 0 0 15px rgba(108, 64, 62, 0.4), inset 0 0 20px rgba(165, 42, 42, 0.25) !important;
+      outline: none !important;
+    }
+
+    .admin-eye-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--theme-primary, #A52A2A);
+      cursor: pointer;
+      font-size: 1.35rem;
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      opacity: 0.9;
+      transition: all 0.2s ease;
+      z-index: 25;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .admin-eye-btn:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.15);
+      color: #ffffff;
+    }
+
+    /* Prevent browser autofill from rendering white background */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-text-fill-color: #ffffff !important;
+      -webkit-box-shadow: 0 0 0 1000px rgba(6, 5, 14, 0.98) inset !important;
+      box-shadow: 0 0 0 1000px rgba(6, 5, 14, 0.98) inset !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    [data-theme="light"] input:-webkit-autofill,
+    [data-theme="light"] input:-webkit-autofill:hover, 
+    [data-theme="light"] input:-webkit-autofill:focus,
+    [data-theme="light"] input:-webkit-autofill:active {
+      -webkit-text-fill-color: #1B2342 !important;
+      -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+      box-shadow: 0 0 0 1000px #ffffff inset !important;
+    }
+
+    .admin-unlock-btn {
+      width: 100% !important;
+      background: linear-gradient(135deg, var(--neon-cyan, #A52A2A) 0%, #6C403E 100%) !important;
+      color: #05040a !important;
+      font-family: var(--font-display, 'Roboto Slab', serif) !important;
+      font-size: 0.95rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.1em !important;
+      padding: 0.95rem 1.5rem !important;
+      border: none !important;
+      border-radius: 6px !important;
+      cursor: pointer !important;
+      box-shadow: 0 0 25px rgba(165, 42, 42, 0.4) !important;
+      transition: all 0.25s ease !important;
+      box-sizing: border-box !important;
+    }
+    .admin-unlock-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(165, 42, 42, 0.7);
+    }
+
+
+
+    .admin-auth-error {
+      display: none;
+      background: rgba(108, 64, 62, 0.15);
+      border: 1px solid var(--neon-pink, #ff0055);
+      color: #ff3377;
+      font-family: 'Roboto Slab', serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.7rem 0.9rem;
+      border-radius: 6px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 0 15px rgba(108, 64, 62, 0.3);
+      animation: shakeError 0.3s ease-in-out;
+    }
+
+    .admin-auth-success {
+      display: none;
+      background: rgba(0, 255, 170, 0.15);
+      border: 1px solid #00ffaa;
+      color: #00ffaa;
+      font-family: 'Roboto Slab', serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.7rem 0.9rem;
+      border-radius: 6px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+    }
+  </style>
+</head>
+<body id="admin-app">
+  <div class="bg-parallax-backdrop" aria-hidden="true"></div>
+  <div class="bg-atmospheric-scrim" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       SECURITY GATEWAY LOCK SCREEN (AUTHORIZED FEST ADMINS ONLY)
+       ======================================================================== -->
+  <div id="admin-lock-screen" class="admin-lock-overlay">
+    <div style="position: absolute; top: 1.5rem; right: 1.5rem; z-index: 100000;">
+      
+    </div>
+    <div class="admin-lock-card">
+      <div class="admin-gateway-logo">
+        <img src="images/logo-emblem-clean.png?v=2027b" alt="ARENIUM'27 Logo" onerror="this.src='images/logo.svg'">
+      </div>
+
+      <div class="admin-gateway-badge">
+        🔒 SECURITY CLEARANCE REQUIRED // LEVEL 5
+      </div>
+
+      <h1 class="admin-gateway-title">SUPERADMIN GATEWAY</h1>
+      <p class="admin-gateway-subtitle">
+        School of Information Science (SOIS) · Presidency University<br>
+        Access restricted to authorized fest committee leads.
+      </p>
+
+      <div id="admin-auth-error" class="admin-auth-error" role="alert">
+        ⚠️ ACCESS DENIED: Invalid User ID or Password. Check your credentials.
+      </div>
+
+      <div id="admin-auth-success" class="admin-auth-success" role="alert">
+        ⚡ ACCESS GRANTED // INITIALIZING TERMINAL...
+      </div>
+
+      <form id="admin-login-form" onsubmit="event.preventDefault(); submitAdminLogin();">
+        <!-- Field 1: User ID (Email) -->
+        <div style="margin-bottom: 1rem; text-align: left;">
+          <label class="admin-label" for="admin-email-input" style="display: block; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--theme-primary); margin-bottom: 0.45rem; font-weight: 700;">
+            ⚡ ADMIN USER ID (EMAIL) ⚡
+          </label>
+          <div class="admin-input-box">
+            <input type="email" id="admin-email-input" class="admin-input-glow" placeholder="Enter authorized admin email" autocomplete="username" autofocus required>
+          </div>
+        </div>
+
+        <!-- Field 2: Password with toggle button -->
+        <div style="margin-bottom: 1.2rem; text-align: left;">
+          <label class="admin-label" for="admin-passkey-input" style="display: block; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--theme-primary); margin-bottom: 0.45rem; font-weight: 700;">
+            ⚡ PASSWORD ⚡
+          </label>
+          <div class="admin-input-box" style="position: relative;">
+            <input type="password" id="admin-passkey-input" class="admin-input-glow" placeholder="Enter security password" autocomplete="current-password" required style="padding-right: 3.2rem !important;">
+            <button type="button" id="admin-toggle-pass-visibility" class="admin-eye-btn" onclick="toggleAdminPasswordVisibility(event)" title="Show / Hide Password" aria-label="Toggle password visibility">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="admin-login-btn" class="admin-unlock-btn" style="margin-top: 0.6rem;">
+          ⚡ AUTHENTICATE &amp; UNLOCK SYSTEM
+        </button>
+      </form>
+
+      <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1rem;">
+        <a href="index.html" class="terminal-link" style="font-size: 0.8rem;">
+          &lt; RETURN TO PUBLIC PORTAL
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Bulletproof Failsafe Pre-Fed Admin Authentication Engine
+    (function() {
+      const PREFED_ADMINS = [
+        {
+          email: "singhkaushal.2507@gmail.com",
+          password: "Kaush2507",
+          name: "Kaushal Kumar Singh",
+          role: "Finance & Registration Manager",
+          badge: "Finance Lead"
+        },
+        {
+          email: "Kathuriaabhyas@gmail.com",
+          password: "Abhyas2108",
+          name: "Abhyas Kathuria",
+          role: "Technical Manager",
+          badge: "Tech Lead"
+        },
+        {
+          email: "ashlinsiddharth1@gmail.com",
+          password: "Ashlin01",
+          name: "Ashlin Siddharth",
+          role: "Marketing and Registration Manager",
+          badge: "Marketing Lead"
+        },
+        {
+          email: "vimalrajsnkk@gmail.com",
+          password: "Vimal69",
+          name: "Vimal Raj",
+          role: "Event Manager",
+          badge: "Event Ops Lead"
+        },
+        {
+          email: "kerenlois@presidencyuniversity.in",
+          password: "Kerensois27",
+          name: "Ms. Keren Lois Daniel",
+          role: "Faculty Co-ordinator & Programme Lead",
+          badge: "Faculty Convener"
+        }
+      ];
+
+      window.PREFED_ADMINS = PREFED_ADMINS;
+
+      function updateAdminProfileHeader(admin) {
+        const nameEl = document.getElementById("admin-user-name");
+        const roleEl = document.getElementById("admin-user-role");
+        const ovNameEl = document.getElementById("overview-admin-name");
+        const ovMetaEl = document.getElementById("overview-admin-meta");
+
+        if (nameEl) nameEl.textContent = admin.name;
+        if (roleEl) roleEl.textContent = admin.role;
+        if (ovNameEl) ovNameEl.textContent = admin.name;
+        if (ovMetaEl) ovMetaEl.textContent = `${admin.email} · ${admin.role}`;
+      }
+
+      function checkAuth() {
+        let isAuth = false;
+        try { isAuth = sessionStorage.getItem("arenium_admin_authenticated") === "true"; } catch(e){}
+        if (!isAuth) {
+          try { isAuth = localStorage.getItem("arenium_admin_authenticated") === "true"; } catch(e){}
+        }
+        if (!isAuth && window.__arenium_authenticated) isAuth = true;
+
+        const lock = document.getElementById("admin-lock-screen");
+        const app = document.getElementById("admin-main-interface");
+
+        if (isAuth) {
+          if (lock) lock.style.display = "none";
+          if (app) app.style.display = "block";
+
+          let curEmail = "";
+          try {
+            curEmail = sessionStorage.getItem("arenium_admin_user") || localStorage.getItem("arenium_admin_user") || "";
+          } catch(e){}
+          
+          let currentAdmin = PREFED_ADMINS.find(u => u.email.toLowerCase() === curEmail.toLowerCase());
+          if (!currentAdmin) {
+            currentAdmin = {
+              name: sessionStorage.getItem("arenium_admin_name") || "Fest Administrator",
+              role: sessionStorage.getItem("arenium_admin_role") || "Superadmin",
+              email: curEmail || "admin@presidencyuniversity.in"
+            };
+          }
+          updateAdminProfileHeader(currentAdmin);
+
+          if (typeof renderAdminOverview === "function" && window.FestDB) {
+            try { renderAdminOverview(FestDB.getData()); } catch(e){}
+          }
+        } else {
+          if (lock) lock.style.display = "flex";
+          if (app) app.style.display = "none";
+          const emailInp = document.getElementById("admin-email-input");
+          if (emailInp) setTimeout(function() { emailInp.focus(); }, 150);
+        }
+      }
+
+
+      // Interactive Eye Toggle to View / Hide Password
+      window.toggleAdminPasswordVisibility = function(e) {
+        if (e) {
+          if (typeof e.preventDefault === "function") e.preventDefault();
+          if (typeof e.stopPropagation === "function") e.stopPropagation();
+        }
+        const passInp = document.getElementById("admin-passkey-input");
+        const toggleBtn = document.getElementById("admin-toggle-pass-visibility");
+        if (!passInp) return false;
+        const currentType = passInp.getAttribute("type") || passInp.type;
+        const nextType = currentType === "password" ? "text" : "password";
+        passInp.type = nextType;
+        passInp.setAttribute("type", nextType);
+        if (toggleBtn) {
+          toggleBtn.textContent = nextType === "text" ? "🙈" : "👁️";
+          toggleBtn.setAttribute("title", nextType === "text" ? "Hide Password" : "Show Password");
+        }
+        return false;
+      };
+
+      // Strict Authentication for Authorized Admins Only
+      window.submitAdminLogin = function() {
+        const emailInp = document.getElementById("admin-email-input");
+        const passInp = document.getElementById("admin-passkey-input");
+        
+        const rawEmail = emailInp ? emailInp.value.trim() : "";
+        const rawPass = passInp ? passInp.value.trim() : "";
+        const cleanEmail = rawEmail.toLowerCase();
+
+        const err = document.getElementById("admin-auth-error");
+        const succ = document.getElementById("admin-auth-success");
+
+        // Strictly check against the 5 pre-fed authorized fest admins
+        let matched = PREFED_ADMINS.find(u => 
+          u.email.toLowerCase() === cleanEmail && u.password === rawPass
+        );
+
+        if (matched) {
+          window.__arenium_authenticated = true;
+          try {
+            sessionStorage.setItem("arenium_admin_authenticated", "true");
+            sessionStorage.setItem("arenium_admin_user", matched.email);
+            sessionStorage.setItem("arenium_admin_name", matched.name);
+            sessionStorage.setItem("arenium_admin_role", matched.role);
+            localStorage.setItem("arenium_admin_authenticated", "true");
+            localStorage.setItem("arenium_admin_user", matched.email);
+            localStorage.setItem("arenium_admin_name", matched.name);
+            localStorage.setItem("arenium_admin_role", matched.role);
+          } catch(e){}
+
+          if (err) err.style.display = "none";
+          if (succ) {
+            succ.style.display = "block";
+            succ.textContent = `⚡ ACCESS GRANTED // WELCOME ${matched.name.toUpperCase()} (${matched.role.toUpperCase()})...`;
+          }
+
+          setTimeout(function() {
+            checkAuth();
+            if (typeof initAdminPanel === "function") {
+              initAdminPanel();
+            }
+          }, 350);
+          return true;
+        } else {
+          if (err) {
+            err.style.display = "block";
+            err.textContent = "⚠️ ACCESS DENIED: Invalid User ID or Password. Check your credentials.";
+          }
+          if (succ) succ.style.display = "none";
+          if (passInp) {
+            passInp.value = "";
+            passInp.focus();
+          }
+          return false;
+        }
+      };
+
+      window.adminLogout = function() {
+        window.__arenium_authenticated = false;
+        try {
+          sessionStorage.removeItem("arenium_admin_authenticated");
+          sessionStorage.removeItem("arenium_admin_user");
+          sessionStorage.removeItem("arenium_admin_name");
+          sessionStorage.removeItem("arenium_admin_role");
+          localStorage.removeItem("arenium_admin_authenticated");
+          localStorage.removeItem("arenium_admin_user");
+          localStorage.removeItem("arenium_admin_name");
+          localStorage.removeItem("arenium_admin_role");
+        } catch(e){}
+        location.reload();
+      };
+
+      document.addEventListener("DOMContentLoaded", function() {
+        checkAuth();
+      });
+    })();
+  </script>
+
+  <!-- ========================================================================
+       AUTHENTICATED ADMIN INTERFACE
+       ======================================================================== -->
+  <div id="admin-main-interface" style="display: none;">
+
+    <!-- ========================================================================
+         ADMIN TOP BAR
+         ======================================================================== -->
+    <header class="site-header" role="banner" style="position: sticky; top: 0; z-index: 100;">
+      <div class="container header-container">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <!-- Brand Logo & Wordmark -->
+      <a href="index.html" class="brand-link" aria-label="Presidency University Home">
+        <img src="images/presidency-university-logo-dark.png?v=2027" alt="Presidency University" class="header-pu-logo" width="145" height="29">
+      </a>
+          <span style="background: var(--theme-secondary); color: #fff; font-family: var(--font-display); font-size: 0.65rem; font-weight: 900; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 0.1em;">
+            SUPERADMIN CONSOLE
+          </span>
+        </div>
+
+        <div style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+          <!-- Active Admin User Badge -->
+          <div id="admin-user-badge" class="admin-user-pill" title="Currently authenticated fest admin">
+            <span class="admin-user-dot"></span>
+            <span id="admin-user-name" style="font-weight: 700; color: var(--text-primary);">Kaushal Kumar Singh</span>
+            <span id="admin-user-role" class="admin-quick-pill-badge">Finance Lead</span>
+          </div>
+
+          
+          <a href="index.html" target="_blank" class="btn btn-ghost" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;">
+            🌐 VIEW LIVE WEBSITE &gt;
+          </a>
+          <button id="admin-export-btn" class="btn btn-primary" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;">
+            💾 EXPORT JSON
+          </button>
+          <button id="admin-logout-btn" class="btn btn-ghost" style="padding: 0.5rem 0.9rem; font-size: 0.75rem; color: var(--theme-primary); border-color: var(--theme-primary);" onclick="adminLogout()">
+            🔒 LOGOUT
+          </button>
+        </div>
+      </div>
+    </header>
+
+  <!-- ========================================================================
+       ADMIN CONSOLE LAYOUT
+       ======================================================================== -->
+  <div class="admin-layout">
+
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar" role="navigation">
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.5rem; padding-left: 0.5rem; letter-spacing: 0.1em;">
+        TERMINAL MODULES
+      </div>
+
+      <button type="button" class="admin-nav-btn active" data-tab="tab-overview">
+        📊 Overview &amp; Stats
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-events">
+        🎮 Events &amp; Rulebooks
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-registrations">
+        📝 Registrations &amp; Portal
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-schedule">
+        📅 Event Schedules
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-coords">
+        👥 4 Coordinators &amp; Photos
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-leadership">
+        🏛️ Dean, HOD &amp; SOIS Faculty
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-winners">
+        🏆 Winners &amp; Results
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-certificates">
+        📜 Uploaded Certificates
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-announcements">
+        📢 ₹1.5L Ticker &amp; Alerts
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-sponsors">
+        🤝 Sponsors &amp; Partners
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-gallery">
+        📸 Gallery Photos
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-settings">
+        📱 Scanner &amp; Date Config
+      </button>
+      <button type="button" class="admin-nav-btn" data-tab="tab-backup">
+        💾 Backup, Import &amp; Reset
+      </button>
+
+      <div style="margin-top: auto; padding: 1rem 0.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+        <strong style="color: #A52A2A; display: block;">Fest Engine Live:</strong>
+        Changes auto-sync to all client pages via localStorage.
+      </div>
+    </aside>
+
+    <!-- Main Working Panel -->
+    <main class="admin-main-panel">
+
+      <!-- --------------------------------------------------------------------
+           TAB 1: OVERVIEW & STATS
+           -------------------------------------------------------------------- -->
+      <div id="tab-overview" class="admin-tab-pane">
+        <!-- Active Authenticated Admin Banner -->
+        <div class="cyber-card" style="padding: 1.2rem; margin-bottom: 1.5rem; background: rgba(var(--primary-rgb), 0.06); border: 1px solid var(--theme-primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.9rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(var(--primary-rgb), 0.2); border: 2px solid var(--theme-primary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+              🛡️
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">CURRENT ACTIVE ADMINISTRATOR</div>
+              <div id="overview-admin-name" style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary);">Kaushal Kumar Singh</div>
+              <div id="overview-admin-meta" style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary);">singhkaushal.2507@gmail.com · Finance &amp; Registration Manager</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span class="admin-quick-pill-badge" style="background: rgba(0, 255, 170, 0.15); border-color: #00ffaa; color: #00ffaa;">● ACTIVE SESSION</span>
+            <button class="btn btn-ghost" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="adminLogout()">🔒 SWITCH ADMIN</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[SYSTEM METRICS]</span>
+          <h1 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff;">FESTIVAL CONTROL MATRIX</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Real-time status overview of ARENIUM'27 website assets, competitions, and coordinator registry.
+          </p>
+        </div>
+
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div class="admin-stat-num" id="stat-total-events">10</div>
+            <div class="admin-stat-label">Active Competitions</div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-num" id="stat-total-coords">4</div>
+            <div class="admin-stat-label">Student Coordinators</div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-num" id="stat-total-sponsors">6</div>
+            <div class="admin-stat-label">Active Sponsors</div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-num" id="stat-total-winners">9</div>
+            <div class="admin-stat-label">Winner Podiums Configured</div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-num" id="stat-total-certs">9</div>
+            <div class="admin-stat-label">Issued Certificates</div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-num" id="stat-total-registrations">4</div>
+            <div class="admin-stat-label">Total Registrations</div>
+          </div>
+        </div>
+
+        <div class="cyber-card" style="padding: 1.5rem; margin-top: 1.5rem;">
+          <h3 style="font-family: var(--font-display); color: #A52A2A; margin-bottom: 0.8rem;">
+            ⚡ QUICK ADMIN SHORTCUTS
+          </h3>
+          <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="addNewAdminEvent()">➕ Add New Event</button>
+            <button class="btn btn-ghost" onclick="addNewAdminScheduleItem()">📅 Add Schedule Milestone</button>
+            <button class="btn btn-ghost" onclick="addNewAdminSponsor()">➕ Add Sponsor</button>
+            <button class="btn btn-ghost" onclick="addNewAdminGalleryPhoto()">➕ Add Gallery Photo</button>
+            <a href="winners.html" target="_blank" class="btn btn-ghost">🏆 Preview Winners Page</a>
+            <a href="certificate.html" target="_blank" class="btn btn-ghost">📜 Launch Certificate Studio</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 2: EVENTS & RULEBOOKS
+           -------------------------------------------------------------------- -->
+      <div id="tab-events" class="admin-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">[ARENAS DATABASE]</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">MANAGE EVENTS &amp; POSTERS</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">
+              Edit event titles, categories, descriptions, cash prizes, assigned coordinator, and rulebooks.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="addNewAdminEvent()">➕ ADD NEW EVENT</button>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Event Name &amp; ID</th>
+                <th>Category</th>
+                <th>Prize Pool</th>
+                <th>Coordinator</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-events-table-body">
+              <!-- Rendered via renderAdminEvents() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB: DELEGATE REGISTRATIONS & PORTAL CUSTOMIZATION
+           -------------------------------------------------------------------- -->
+      <div id="tab-registrations" class="admin-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">[DELEGATE REGISTRY &amp; CUSTOMIZATION]</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">REGISTRATION MANAGER &amp; PORTAL CONFIG</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">
+              Manage delegate registrations, update portal status, configure UPI payment gateway, customize instructions, and adjust competition fees.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="exportRegistrationsCSV()">
+              📥 Export to CSV / Excel
+            </button>
+            <button class="btn btn-ghost" onclick="openManualRegModal()">
+              + Add Walk-in Registration
+            </button>
+            <a href="register.html" target="_blank" class="btn btn-ghost">
+              ↗ Live Portal View
+            </a>
+          </div>
+        </div>
+
+        <!-- Portal Customization Card -->
+        <div class="cyber-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+          <h3 style="color: #60A5FA; font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 1rem;">
+            ⚙️ REGISTRATION PORTAL CUSTOMIZATION SETTINGS
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div class="admin-form-group">
+              <label class="admin-label" for="reg-admin-status">REGISTRATION SYSTEM STATUS</label>
+              <select id="reg-admin-status" class="admin-select">
+                <option value="open">🟢 LIVE &amp; OPEN (Accepting Online Registrations)</option>
+                <option value="spot_only">🟡 ON-SPOT ONLY (Desk Registration at Campus)</option>
+                <option value="closed">🔴 CLOSED (Registrations Halted)</option>
+              </select>
+            </div>
+
+            <div class="admin-form-group">
+              <label class="admin-label" for="reg-admin-mode">PORTAL MODE</label>
+              <select id="reg-admin-mode" class="admin-select">
+                <option value="internal">Built-in Dedicated Portal (register.html)</option>
+                <option value="external">External Google Form / Unstop Link</option>
+              </select>
+            </div>
+
+            <div class="admin-form-group">
+              <label class="admin-label" for="reg-admin-external-url">EXTERNAL REGISTRATION URL</label>
+              <input type="url" id="reg-admin-external-url" class="admin-input" placeholder="https://forms.google.com/...">
+            </div>
+
+            <div class="admin-form-group">
+              <label class="admin-label" for="reg-admin-upi">RECEIVING UPI ID</label>
+              <input type="text" id="reg-admin-upi" class="admin-input" placeholder="arenium27@icici">
+            </div>
+
+            <div class="admin-form-group">
+              <label class="admin-label" for="reg-admin-qr">PAYMENT QR CODE IMAGE PATH</label>
+              <input type="text" id="reg-admin-qr" class="admin-input" placeholder="images/qrcode.png">
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label class="admin-label" for="reg-admin-instructions">CUSTOM PORTAL INSTRUCTIONS &amp; GUIDELINES</label>
+            <textarea id="reg-admin-instructions" class="admin-textarea" rows="3" placeholder="Enter registration instructions displayed to participants..."></textarea>
+          </div>
+
+          <!-- Event Fees Editor Accordion / Grid -->
+          <div style="margin-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.2rem;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: #93C5FD; margin-bottom: 0.8rem; letter-spacing: 0.05em;">
+              💳 CUSTOMIZE COMPETITION REGISTRATION FEES
+            </div>
+            <div id="reg-admin-fees-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem;">
+              <!-- Dynamically populated per event -->
+            </div>
+          </div>
+
+          <button id="admin-save-reg-config-btn" class="btn btn-primary" style="margin-top: 1.5rem;">
+            💾 SAVE PORTAL CONFIGURATION
+          </button>
+        </div>
+
+        <!-- Registrations Filter & Live Table -->
+        <div class="cyber-card" style="padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+              <select id="reg-filter-event" class="admin-select" style="max-width: 240px;">
+                <option value="ALL">All Competitions</option>
+              </select>
+              <select id="reg-filter-status" class="admin-select" style="max-width: 180px;">
+                <option value="ALL">All Statuses</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Pending">Pending</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+              <input type="text" id="reg-search-input" class="admin-input" placeholder="Search name, USN, college, UTR..." style="max-width: 280px;">
+            </div>
+
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: #94A3B8;">
+              Showing <span id="reg-count-display" style="color: #60A5FA; font-weight: 700;">0</span> records
+            </div>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>REG ID</th>
+                  <th>DELEGATE &amp; CONTACT</th>
+                  <th>COLLEGE &amp; USN</th>
+                  <th>ARENA / TRACK</th>
+                  <th>UTR / TRANSACTION</th>
+                  <th>STATUS</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="admin-registrations-table-body">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB: EVENT SCHEDULES
+           -------------------------------------------------------------------- -->
+      <div id="tab-schedule" class="admin-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">[TIMELINE CHRONOLOGY]</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">MANAGE EVENT SCHEDULES</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">
+              Update time slots, venues, categories, Day 1 / Day 2 assignments, and operational notes.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="addNewAdminScheduleItem()">➕ ADD SCHEDULE ITEM</button>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Day &amp; Time</th>
+                <th>Event / Milestone</th>
+                <th>Category</th>
+                <th>Venue</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-schedule-table-body">
+              <!-- Rendered via renderAdminSchedule() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 3: COORDINATORS & PHOTOS
+           -------------------------------------------------------------------- -->
+      <div id="tab-coords" class="admin-tab-pane" style="display: none;">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[LEADERSHIP MATRIX]</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">4 STUDENT COORDINATORS</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">
+            Update names, phone numbers, roles, and avatar/photo image paths for Kaushal Kumar, Ashlin, Abhyas Kathuria, and Vimal.
+          </p>
+        </div>
+
+        <div id="admin-coords-list">
+          <!-- Rendered via renderAdminCoordinators() -->
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 4: DEAN, HOD & FULL SOIS LEADERSHIP
+           -------------------------------------------------------------------- -->
+      <div id="tab-leadership" class="admin-tab-pane" style="display: none;">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[FACULTY PATRONS]</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">DEAN, HOD &amp; SOIS FACULTY CREW</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">
+            Manage Patron / Dean Dr. C. Kalaiarasan, HOD Dr. K. G. Mohan, Programme Organiser Ms. Keren Lois Daniel, and SOIS department mentors.
+          </p>
+        </div>
+
+        <div id="admin-leadership-list">
+          <!-- Rendered via renderAdminLeadership() -->
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 5: WINNERS & RESULTS
+           -------------------------------------------------------------------- -->
+      <div id="tab-winners" class="admin-tab-pane" style="display: none;">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[CHAMPIONS REGISTRY]</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">WINNERS &amp; RESULTS PUBLISHING</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">
+            Toggle public visibility of results on winners.html, edit 1st, 2nd, and 3rd place podium standings and cash prizes.
+          </p>
+        </div>
+
+        <!-- Publish Toggle Box -->
+        <div class="cyber-card" style="padding: 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; border-color: var(--neon-yellow);">
+          <div>
+            <strong style="color: #fff; font-size: 1rem; display: block;">PUBLISH RESULTS ON LIVE WEBSITE</strong>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">
+              When checked, winners.html displays the full podium leaderboard. When unchecked, it shows "Results Locked".
+            </span>
+          </div>
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); color: var(--neon-yellow); cursor: pointer;">
+            <input type="checkbox" id="admin-publish-results-toggle" style="width: 20px; height: 20px; cursor: pointer;">
+            <span>ACTIVE</span>
+          </label>
+        </div>
+
+        <div id="admin-winners-list">
+          <!-- Rendered via renderAdminWinners() -->
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB: UPLOADED CERTIFICATES & DOWNLOAD MANAGER
+           -------------------------------------------------------------------- -->
+      <div id="tab-certificates" class="admin-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">[ACCREDITATION REPOSITORY]</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">MANAGE PARTICIPANT CERTIFICATES</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">
+              Upload, add, or edit event participation and merit certificates for online verification and student download.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="addNewAdminCertificate()">➕ ADD NEW CERTIFICATE</button>
+        </div>
+
+        <!-- Publish Certificates Toggle Box -->
+        <div class="cyber-card" style="padding: 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; border-color: #A52A2A;">
+          <div>
+            <strong style="color: #fff; font-size: 1rem; display: block;">ENABLE CERTIFICATE DOWNLOADS ON PUBLIC PORTAL</strong>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">
+              When active, participants can search and download their verified certificates on certificate.html.
+            </span>
+          </div>
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); color: #A52A2A; cursor: pointer;">
+            <input type="checkbox" id="admin-publish-certs-toggle" style="width: 20px; height: 20px; cursor: pointer;">
+            <span>ACTIVE</span>
+          </label>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Certificate ID</th>
+                <th>Recipient / Team</th>
+                <th>Event Name</th>
+                <th>Award / Tier</th>
+                <th>College</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-certs-table-body">
+              <!-- Rendered via renderAdminCertificates() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 6: ANNOUNCEMENTS & TICKER
+           -------------------------------------------------------------------- -->
+      <div id="tab-announcements" class="admin-tab-pane" style="display: none;">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[BROADCAST TRANSMISSION]</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">PRIZE POOL TICKER &amp; ALERTS</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">
+            Edit the continuous neon moving ticker message (1.5 Lakhs Prize Pool) and emergency alert banners.
+          </p>
+        </div>
+
+        <div class="cyber-card" style="padding: 1.5rem;">
+          <div class="admin-form-group">
+            <label class="admin-label" for="admin-ticker-input">MOVING NEON TICKER TEXT ({PRICE MONEY 1.5L})</label>
+            <textarea id="admin-ticker-input" class="admin-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="admin-form-group">
+            <label class="admin-label" for="admin-banner-input">BREAKING ANNOUNCEMENT BANNER</label>
+            <input type="text" id="admin-banner-input" class="admin-input">
+          </div>
+
+          <button id="admin-save-announcements-btn" class="btn btn-primary" style="margin-top: 1rem;">
+            💾 SAVE ANNOUNCEMENTS LIVE
+          </button>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 7: SPONSORS
+           -------------------------------------------------------------------- -->
+      <div id="tab-sponsors" class="admin-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">[PARTNERSHIP NETWORK]</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">MANAGE SPONSORS</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">
+              Add, edit, or remove corporate partners, title sponsors, gaming brands, and logo URLs.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="addNewAdminSponsor()">➕ ADD SPONSOR</button>
+        </div>
+
+        <div id="admin-sponsors-list">
+          <!-- Rendered via renderAdminSponsors() -->
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 8: GALLERY
+           -------------------------------------------------------------------- -->
+      <div id="tab-gallery" class="admin-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">[VISUAL ARCHIVE]</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">GALLERY MOMENTS</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">
+              Add new stage photos, crowds, LAN gaming captures, and hashtag categories.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="addNewAdminGalleryPhoto()">➕ ADD PHOTO</button>
+        </div>
+
+        <div id="admin-gallery-list">
+          <!-- Rendered via renderAdminGallery() -->
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 9: SCANNER & DATE SETTINGS
+           -------------------------------------------------------------------- -->
+      <div id="tab-settings" class="admin-tab-pane" style="display: none;">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[CORE PROTOCOL]</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">REGISTRATION SCANNER &amp; CONFIG</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">
+            Update master Google Form / Unstop registration link, countdown date, and scanner QR code.
+          </p>
+        </div>
+
+        <div class="cyber-card" style="padding: 1.5rem;">
+          <div class="admin-form-group">
+            <label class="admin-label" for="admin-setting-regurl">MASTER REGISTRATION PORTAL URL</label>
+            <input type="url" id="admin-setting-regurl" class="admin-input" placeholder="https://forms.google.com/...">
+            <span style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.2rem; display: block;">
+              All "REGISTER NOW" buttons on header, hero, cards, and modal redirect to this URL.
+            </span>
+          </div>
+
+          <div class="admin-form-group">
+            <label class="admin-label" for="admin-setting-eventdate">COUNTDOWN TARGET DATE (ISO 8601)</label>
+            <input type="text" id="admin-setting-eventdate" class="admin-input" placeholder="2027-02-04T08:30:00+05:30">
+          </div>
+
+          <div class="admin-form-group">
+            <label class="admin-label" for="admin-setting-qrimg">SCANNER QR CODE IMAGE PATH / URL</label>
+            <input type="text" id="admin-setting-qrimg" class="admin-input" placeholder="images/qrcode.png">
+          </div>
+
+          <button id="admin-save-settings-btn" class="btn btn-primary" style="margin-top: 1rem;">
+            💾 SAVE CONFIGURATION
+          </button>
+        </div>
+
+        <!-- Authorized System Administrators Directory -->
+        <div class="cyber-card" style="padding: 1.5rem; margin-top: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <h3 style="color: #A52A2A; font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 0.3rem;">
+                👥 PRE-CONFIGURED FEST ADMINISTRATORS
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.8rem; margin: 0;">
+                Authorized credentials provisioned for ARENIUM'27 organizing leadership.
+              </p>
+            </div>
+            <span class="admin-quick-pill-badge" style="background: rgba(0, 255, 170, 0.15); border-color: #00ffaa; color: #00ffaa;">
+              5 ACTIVE ACCOUNTS
+            </span>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ADMIN NAME</th>
+                  <th>USER ID (EMAIL)</th>
+                  <th>ROLE</th>
+                  <th>SECURITY CLEARANCE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Kaushal Kumar Singh</strong></td>
+                  <td><code>singhkaushal.2507@gmail.com</code></td>
+                  <td>Finance &amp; Registration Manager</td>
+                  <td><span class="admin-quick-pill-badge" style="color: #00ffaa; border-color: #00ffaa;">● LEVEL 5 ACTIVE</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Abhyas Kathuria</strong></td>
+                  <td><code>Kathuriaabhyas@gmail.com</code></td>
+                  <td>Technical Manager</td>
+                  <td><span class="admin-quick-pill-badge" style="color: #00ffaa; border-color: #00ffaa;">● LEVEL 5 ACTIVE</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Ashlin Siddharth</strong></td>
+                  <td><code>ashlinsiddharth1@gmail.com</code></td>
+                  <td>Marketing &amp; Registration Manager</td>
+                  <td><span class="admin-quick-pill-badge" style="color: #00ffaa; border-color: #00ffaa;">● LEVEL 5 ACTIVE</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Vimal Raj</strong></td>
+                  <td><code>vimalrajsnkk@gmail.com</code></td>
+                  <td>Event Manager</td>
+                  <td><span class="admin-quick-pill-badge" style="color: #00ffaa; border-color: #00ffaa;">● LEVEL 5 ACTIVE</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Ms. Keren Lois Daniel</strong></td>
+                  <td><code>kerenlois@presidencyuniversity.in</code></td>
+                  <td>Faculty Co-ordinator &amp; Programme Lead</td>
+                  <td><span class="admin-quick-pill-badge" style="color: #00ffaa; border-color: #00ffaa;">● LEVEL 5 ACTIVE</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- --------------------------------------------------------------------
+           TAB 10: BACKUP, IMPORT & RESET
+           -------------------------------------------------------------------- -->
+      <div id="tab-backup" class="admin-tab-pane" style="display: none;">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="section-tag">[PERSISTENCE &amp; RECOVERY]</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff;">DATABASE BACKUP &amp; RESTORE</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">
+            Export your entire fest database as a portable JSON file, restore from backup, or reset to original factory defaults.
+          </p>
+        </div>
+
+        <div class="cyber-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+          <h3 style="color: #A52A2A; font-family: var(--font-display); margin-bottom: 0.6rem;">📥 RESTORE FROM JSON FILE</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+            Upload an exported <code>arenium27_data_backup.json</code> to instantly populate all events, winners, coordinators, and settings.
+          </p>
+          <input type="file" id="admin-import-file" accept=".json" class="admin-input" style="max-width: 400px;">
+        </div>
+
+        <div class="cyber-card" style="padding: 1.5rem; border-color: #6C403E;">
+          <h3 style="color: #6C403E; font-family: var(--font-display); margin-bottom: 0.6rem;">⚠️ RESET TO DEFAULT FACTORY SEED</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+            This will purge custom edits from localStorage and restore the complete initial Arenium'27 dataset.
+          </p>
+          <button id="admin-reset-btn" class="btn btn-ghost" style="color: #6C403E; border-color: #6C403E;">
+            🔄 RESET ALL FEST DATA TO DEFAULTS
+          </button>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+  </div><!-- /#admin-main-interface -->
+
+  <script src="js/main.js?v=2027P"></script>
+</body>
+</html>
