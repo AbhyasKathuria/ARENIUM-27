@@ -4791,44 +4791,151 @@ p,
   }
 }
 
-/* Atmosphere Footer */
+/* ==========================================================================
+   GLOBAL FOOTER - MATCHED TO HEADER COLOR (IMAGE 1 DARK OBSIDIAN NAVY AESTHETIC)
+   ========================================================================== */
 .site-footer {
-  background: rgba(213, 229, 229, 0.65) !important;
-  backdrop-filter: blur(20px) saturate(160%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
-  border-top: 1.5px solid var(--palette-mauve, #DDD3D3) !important;
-  color: var(--palette-slate, #5D6B6B) !important;
+  background: rgba(14, 20, 32, 0.96) !important;
+  backdrop-filter: blur(28px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.45) !important;
+  color: #CBD5E1 !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
-.footer-brand-title {
-  color: var(--palette-heading, #2C3E3E) !important;
-}
-
-.footer-heading {
-  color: var(--palette-heading, #2C3E3E) !important;
+.site-footer .brand-name {
+  color: #FFFFFF !important;
   font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.08em !important;
 }
 
-.footer-link {
-  color: var(--palette-slate, #5D6B6B) !important;
+.site-footer .brand-name .accent-quote,
+.site-footer .brand-name .accent-num {
+  color: var(--palette-blush, #F7CBCA) !important;
 }
 
-.footer-link:hover {
-  color: var(--palette-heading, #2C3E3E) !important;
+.site-footer .footer-desc {
+  color: #94A3B8 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.7 !important;
 }
 
-.footer-pu-logo {
-  filter: invert(1) brightness(0.2) contrast(1.2) !important;
-}
-
-.footer-bottom-bar {
-  border-top: 1px solid var(--palette-mauve, #DDD3D3) !important;
-  color: #7A8989 !important;
-}
-
-.footer-bottom-bar a {
-  color: var(--palette-heading, #2C3E3E) !important;
+.site-footer .footer-host-tag {
+  color: var(--palette-aqua, #B0D7D8) !important;
   font-weight: 700 !important;
+  font-size: 0.82rem !important;
+}
+
+.site-footer .footer-col-title,
+.site-footer .footer-heading,
+.site-footer .footer-brand-title {
+  color: #FFFFFF !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.site-footer .footer-col-title::after {
+  background: var(--palette-aqua, #B0D7D8) !important;
+  box-shadow: none !important;
+}
+
+.site-footer .footer-links-list li a,
+.site-footer .footer-link {
+  color: #94A3B8 !important;
+  font-size: 0.88rem !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.site-footer .footer-links-list li a:hover,
+.site-footer .footer-link:hover {
+  color: var(--palette-aqua, #B0D7D8) !important;
+  transform: translateX(3px) !important;
+}
+
+.site-footer .footer-address {
+  color: #94A3B8 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+}
+
+.site-footer .footer-address strong {
+  color: #F1F5F9 !important;
+  font-weight: 700 !important;
+}
+
+.site-footer .footer-contacts-list li a {
+  color: #CBD5E1 !important;
+  font-size: 0.86rem !important;
+  transition: color 0.2s ease !important;
+}
+
+.site-footer .footer-contacts-list li a:hover {
+  color: var(--palette-aqua, #B0D7D8) !important;
+}
+
+/* Presidency University Logo in Footer - White Logo on Dark Background */
+.site-footer .footer-pu-logo,
+.site-footer .pu-logo-dark,
+.site-footer .pu-logo-light {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.site-footer .pu-logo-dark {
+  display: block !important;
+}
+
+.site-footer .pu-logo-light {
+  display: none !important;
+}
+
+.site-footer .social-pill {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #E2E8F0 !important;
+  transition: all 0.25s ease !important;
+}
+
+.site-footer .social-pill:hover {
+  background: var(--palette-aqua, #B0D7D8) !important;
+  border-color: var(--palette-aqua, #B0D7D8) !important;
+  color: #0E1420 !important;
+  transform: translateY(-2px) !important;
+}
+
+.site-footer .footer-map-card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 16px !important;
+}
+
+.site-footer .btn-map-direct {
+  background: rgba(176, 215, 216, 0.18) !important;
+  border: 1px solid rgba(176, 215, 216, 0.35) !important;
+  color: var(--palette-aqua, #B0D7D8) !important;
+  font-weight: 700 !important;
+  transition: all 0.25s ease !important;
+}
+
+.site-footer .btn-map-direct:hover {
+  background: var(--palette-aqua, #B0D7D8) !important;
+  color: #0E1420 !important;
+}
+
+.site-footer .footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #64748B !important;
+  font-size: 0.78rem !important;
+}
+
+.site-footer .footer-bottom-bar a {
+  color: var(--palette-aqua, #B0D7D8) !important;
+  font-weight: 600 !important;
 }
 
 /* Right Top Corner Fest Logo Link */
