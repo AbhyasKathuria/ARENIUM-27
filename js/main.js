@@ -1082,9 +1082,12 @@ function initParallaxBackground() {
   const updateScrollState = () => {
     const scrolled = window.pageYOffset || document.documentElement.scrollTop;
 
-    // 1. Subtle parallax on top hero background while in view (synchronized)
-    if (scrolled < 1100) {
-      const transY = (scrolled * 0.25).toFixed(1);
+    // 1. Subtle parallax on top hero background while in view (synchronized & page-aware)
+    const isSubpage = document.body.classList.contains('subpage-body') || !!document.querySelector('.page-header-banner');
+    const maxScroll = isSubpage ? 500 : 1000;
+    if (scrolled < maxScroll) {
+      const rate = isSubpage ? 0.16 : 0.22;
+      const transY = (scrolled * rate).toFixed(1);
       if (bgBackdrop) bgBackdrop.style.transform = `translate3d(0, ${transY}px, 0)`;
       const bgAtmScrim = document.querySelector('.bg-atmospheric-scrim');
       if (bgAtmScrim) bgAtmScrim.style.transform = `translate3d(0, ${transY}px, 0)`;

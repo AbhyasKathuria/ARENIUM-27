@@ -133,6 +133,9 @@ html {
   color: var(--text-primary);
   color-scheme: dark;
   transition: background-color var(--transition-base), color var(--transition-base);
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
 }
 
 html[data-theme="light"] {
@@ -148,20 +151,22 @@ body {
   line-height: 1.6;
   background-color: var(--palette-normal-bg, #F1F7F7) !important;
   color: var(--palette-slate, #5D6B6B) !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
   min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-/* TOP HERO PARALLAX BACKGROUND (IMAGE 1 NIGHT CAMPUS - FULL VISIBILITY NO PREMATURE FADE) */
+/* TOP HERO PARALLAX BACKGROUND (HOME / DEFAULT) */
 .bg-parallax-backdrop {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 980px !important;
+  height: clamp(820px, 90vh, 960px) !important;
   background-image: url('../images/campus-bg.jpg') !important;
   background-size: cover !important;
   background-position: center top !important;
@@ -175,40 +180,79 @@ body {
   will-change: transform;
   -webkit-mask-image: linear-gradient(to bottom, 
     rgba(0, 0, 0, 1) 0%, 
-    rgba(0, 0, 0, 1) 86%, 
-    rgba(0, 0, 0, 0.75) 92%, 
-    rgba(0, 0, 0, 0.35) 96%, 
+    rgba(0, 0, 0, 1) 84%, 
+    rgba(0, 0, 0, 0.7) 91%, 
+    rgba(0, 0, 0, 0.25) 96%, 
     rgba(0, 0, 0, 0) 100%
   ) !important;
   mask-image: linear-gradient(to bottom, 
     rgba(0, 0, 0, 1) 0%, 
-    rgba(0, 0, 0, 1) 86%, 
-    rgba(0, 0, 0, 0.75) 92%, 
-    rgba(0, 0, 0, 0.35) 96%, 
+    rgba(0, 0, 0, 1) 84%, 
+    rgba(0, 0, 0, 0.7) 91%, 
+    rgba(0, 0, 0, 0.25) 96%, 
     rgba(0, 0, 0, 0) 100%
   ) !important;
 }
 
-/* ATMOSPHERIC GRADIENT SCRIM (CLEAN HERO, FADE ONLY AT VERY BOTTOM EDGE) */
+/* ATMOSPHERIC GRADIENT SCRIM (HOME / DEFAULT) */
 .bg-atmospheric-scrim {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 980px !important;
+  height: clamp(820px, 90vh, 960px) !important;
   background: linear-gradient(180deg, 
     rgba(8, 14, 26, 0.45) 0%, 
     rgba(8, 14, 26, 0.1) 15%, 
     transparent 35%, 
-    transparent 86%, 
-    rgba(241, 247, 247, 0.25) 91%, 
-    rgba(241, 247, 247, 0.65) 96%, 
+    transparent 84%, 
+    rgba(241, 247, 247, 0.3) 91%, 
+    rgba(241, 247, 247, 0.75) 96%, 
     var(--palette-normal-bg, #F1F7F7) 100%
   ) !important;
   z-index: 1 !important;
   pointer-events: none !important;
   transform: translate3d(0, 0, 0);
   will-change: transform;
+}
+
+/* SUBPAGE CALIBRATION: PARALLAX FINISHES COMPLETELY IN THE GAP BEFORE CONTENT CARDS */
+.subpage-body .bg-parallax-backdrop,
+body:has(.page-header-banner) .bg-parallax-backdrop,
+.subpage-body .bg-atmospheric-scrim,
+body:has(.page-header-banner) .bg-atmospheric-scrim {
+  height: clamp(520px, 58vh, 620px) !important;
+}
+
+.subpage-body .bg-parallax-backdrop,
+body:has(.page-header-banner) .bg-parallax-backdrop {
+  -webkit-mask-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 70%, 
+    rgba(0, 0, 0, 0.7) 84%, 
+    rgba(0, 0, 0, 0.25) 93%, 
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+  mask-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 70%, 
+    rgba(0, 0, 0, 0.7) 84%, 
+    rgba(0, 0, 0, 0.25) 93%, 
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+}
+
+.subpage-body .bg-atmospheric-scrim,
+body:has(.page-header-banner) .bg-atmospheric-scrim {
+  background: linear-gradient(180deg, 
+    rgba(8, 14, 26, 0.45) 0%, 
+    rgba(8, 14, 26, 0.1) 15%, 
+    transparent 35%, 
+    transparent 70%, 
+    rgba(241, 247, 247, 0.3) 84%, 
+    rgba(241, 247, 247, 0.75) 93%, 
+    var(--palette-normal-bg, #F1F7F7) 100%
+  ) !important;
 }
 
 /* Keyboard accessibility */
@@ -2021,10 +2065,12 @@ button {
   }
 
   .nav-menu {
+    display: none !important;
     position: fixed;
     top: var(--nav-height);
-    left: 0;
-    width: 100%;
+    right: 0;
+    left: auto;
+    width: min(320px, 85vw) !important;
     height: calc(100vh - var(--nav-height));
     background: var(--bg-surface-elevated);
     backdrop-filter: blur(24px);
@@ -2035,15 +2081,15 @@ button {
     gap: 0.9rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    transform: translateX(100%);
-    transition: transform var(--transition-base);
     border-top: 1px solid var(--border-color);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
     z-index: 9999;
   }
 
   .nav-menu.is-open {
-    transform: translateX(0);
+    display: flex !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 
   .header-action-desktop {
@@ -2224,9 +2270,12 @@ button {
 
 /* ==========================================================================
    15. INNER PAGE HEADER BANNER - APPLE STYLED PASTEL FROSTED COLOUR CARD
+   WITH FULL GAP SO PARALLAX GETS OVER BEFORE CONTENT CARDS BEGIN
    ========================================================================== */
 .page-header-banner {
-  padding: clamp(2rem, 3.5vw, 3rem) 0 clamp(1.8rem, 3.5vw, 2.8rem) !important;
+  padding-top: clamp(1.6rem, 3vw, 2.5rem) !important;
+  padding-bottom: clamp(3.5rem, 6.5vw, 5rem) !important;
+  margin-bottom: clamp(2rem, 4.5vw, 3.5rem) !important;
   text-align: center !important;
   position: relative !important;
   background: transparent !important;
@@ -2236,13 +2285,15 @@ button {
 
 .page-header-banner .container {
   max-width: 920px !important;
+  width: min(920px, calc(100% - clamp(1.2rem, 4vw, 2.5rem))) !important;
   margin: 0 auto !important;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3.5vw, 2.8rem) !important;
+  box-sizing: border-box !important;
+  padding: clamp(1.5rem, 3.5vw, 2.8rem) clamp(1rem, 3.2vw, 2.4rem) !important;
   background: linear-gradient(135deg, rgba(213, 229, 229, 0.88) 0%, rgba(176, 215, 216, 0.72) 45%, rgba(247, 203, 202, 0.62) 100%) !important;
   backdrop-filter: blur(28px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
   border: 1.5px solid var(--palette-mauve, #DDD3D3) !important;
-  border-radius: 28px !important;
+  border-radius: clamp(20px, 3.5vw, 28px) !important;
   box-shadow: 0 16px 45px rgba(93, 107, 107, 0.1), inset 0 1.5px 2px rgba(255, 255, 255, 0.95) !important;
   position: relative !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
@@ -2255,14 +2306,17 @@ button {
 
 .breadcrumbs {
   font-family: 'Roboto Slab', serif !important;
-  font-size: 0.78rem !important;
+  font-size: clamp(0.68rem, 1vw, 0.78rem) !important;
   font-weight: 700 !important;
-  letter-spacing: 0.15em !important;
+  letter-spacing: 0.12em !important;
   color: var(--palette-slate, #5D6B6B) !important;
   text-transform: uppercase !important;
   display: inline-block !important;
-  margin-bottom: 0.75rem !important;
-  padding: 0.35rem 1.15rem !important;
+  margin-bottom: 0.65rem !important;
+  padding: 0.3rem clamp(0.7rem, 2vw, 1.15rem) !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  word-break: break-word !important;
   background: rgba(255, 255, 255, 0.8) !important;
   border: 1px solid var(--palette-mauve, #DDD3D3) !important;
   border-radius: 50px !important;
@@ -2270,19 +2324,22 @@ button {
 }
 
 .page-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
+  font-size: clamp(1.6rem, 5vw, 3rem) !important;
   font-weight: 900 !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.04em !important;
   color: var(--palette-heading, #2C3E3E) !important;
-  margin-top: 0.4rem !important;
-  margin-bottom: 0.6rem !important;
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.15 !important;
   text-shadow: none !important;
   text-transform: uppercase !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 .page-header-banner .section-subtitle {
   color: var(--palette-slate, #5D6B6B) !important;
-  font-size: clamp(0.92rem, 1.2vw, 1.05rem) !important;
+  font-size: clamp(0.85rem, 1.1vw, 1rem) !important;
   font-weight: 600 !important;
   line-height: 1.6 !important;
   max-width: 680px !important;
@@ -2909,7 +2966,9 @@ button {
    15. MOVING NEON TICKER (PRIZE POOL 1.5L & BREAKING ALERTS)
    ========================================================================== */
 .cyber-ticker-wrap {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
   background: var(--bg-surface-elevated);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -2918,7 +2977,8 @@ button {
   align-items: center;
   position: relative;
   z-index: 90;
-  overflow: hidden;
+  overflow: hidden !important;
+  contain: paint !important;
   height: 42px;
 }
 
@@ -2938,11 +2998,14 @@ button {
   clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
   z-index: 2;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0 !important;
 }
 
 .cyber-ticker-track {
   flex: 1;
-  overflow: hidden;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  contain: paint !important;
   white-space: nowrap;
   position: relative;
   height: 100%;
@@ -4682,6 +4745,10 @@ html {
 
 /* Floating Ticker with Palette Image 2 */
 .cyber-ticker-wrap {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow: hidden !important;
+  position: relative !important;
   background: rgba(213, 229, 229, 0.78) !important;
   backdrop-filter: blur(20px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
@@ -5814,4 +5881,236 @@ p, span, a, strong, b, em, i,
 .cyber-ticker-track, .section-title,
 .poster-info h3, #poster-heading {
   text-shadow: none !important;
+}
+
+/* ==========================================================================
+   CROSS-DEVICE RESPONSIVE REFINEMENT (PHONE, TABLET, WINDOWS DESKTOP, IOS)
+   ========================================================================== */
+/* Hero Glass Card Responsive Refinement */
+.hero-main-glass-card {
+  box-sizing: border-box !important;
+  max-width: 960px !important;
+  width: min(960px, calc(100% - clamp(1rem, 3.5vw, 2.5rem))) !important;
+  padding: clamp(1.5rem, 3.5vw, 3rem) clamp(1rem, 3vw, 2.6rem) !important;
+  border-radius: clamp(20px, 4vw, 32px) !important;
+  overflow: hidden !important;
+}
+
+.hero-main-glass-card .hero-presenter-tag {
+  font-size: clamp(0.62rem, 2.2vw, 0.82rem) !important;
+  padding: 0.35rem clamp(0.65rem, 2vw, 1.2rem) !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.3 !important;
+  display: inline-flex !important;
+  box-sizing: border-box !important;
+}
+
+.hero-main-glass-card .countdown-grid {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: clamp(0.35rem, 1.5vw, 1rem) !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  max-width: 440px !important;
+  margin: 0 auto 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+.hero-main-glass-card .countdown-box {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  padding: clamp(0.6rem, 1.8vw, 1rem) clamp(0.2rem, 1vw, 0.6rem) !important;
+  border-radius: clamp(10px, 2vw, 16px) !important;
+  box-sizing: border-box !important;
+}
+
+.hero-main-glass-card .count-num {
+  font-size: clamp(1.2rem, 4.5vw, 2.2rem) !important;
+  line-height: 1.1 !important;
+}
+
+.hero-main-glass-card .count-label {
+  font-size: clamp(0.52rem, 1.5vw, 0.72rem) !important;
+  letter-spacing: 1px !important;
+}
+
+.hero-main-glass-card .hero-date-badge {
+  font-size: clamp(0.68rem, 2.2vw, 0.9rem) !important;
+  padding: 0.4rem clamp(0.8rem, 2.5vw, 1.5rem) !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.3 !important;
+  box-sizing: border-box !important;
+}
+
+.hero-main-glass-card .hero-cta-group {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: clamp(0.5rem, 1.5vw, 0.85rem) !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.hero-main-glass-card .hero-cta-group .btn {
+  font-size: clamp(0.72rem, 2vw, 0.88rem) !important;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.85rem, 2.5vw, 1.6rem) !important;
+}
+
+/* Subpage Page Header Banner Card Responsive Refinement */
+.page-header-banner .container {
+  box-sizing: border-box !important;
+  max-width: 920px !important;
+  width: min(920px, calc(100% - clamp(1rem, 4vw, 2.5rem))) !important;
+  padding: clamp(1.4rem, 3.5vw, 2.8rem) clamp(0.85rem, 3vw, 2.4rem) !important;
+  border-radius: clamp(18px, 3.5vw, 28px) !important;
+  overflow: hidden !important;
+}
+
+.filter-chips-container,
+.schedule-tabs {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: clamp(0.35rem, 1vw, 0.65rem) !important;
+  margin: clamp(1rem, 2.5vw, 1.5rem) 0 0.3rem !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+.filter-chip,
+.schedule-tab-btn {
+  font-size: clamp(0.68rem, 1.8vw, 0.8rem) !important;
+  padding: clamp(0.32rem, 1vw, 0.45rem) clamp(0.65rem, 1.6vw, 1.15rem) !important;
+  border-radius: 50px !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE PERFECTION (IPHONE, ANDROID, IPAD, DESKTOP)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 1.2rem 0.5rem 3rem !important;
+  }
+
+  .hero-content {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .hero-main-glass-card {
+    padding: 1.4rem 0.75rem !important;
+    border-radius: 22px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-main-glass-card .hero-presenter-tag {
+    font-size: 0.62rem !important;
+    padding: 0.35rem 0.7rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    letter-spacing: 0.05em !important;
+    display: inline-block !important;
+    line-height: 1.35 !important;
+    max-width: 100% !important;
+  }
+
+  .hero-main-glass-card .hero-date-badge {
+    font-size: 0.68rem !important;
+    padding: 0.35rem 0.75rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    letter-spacing: 0.05em !important;
+    display: inline-block !important;
+    line-height: 1.35 !important;
+    max-width: 100% !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hero-main-glass-card .glitch-title {
+    font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
+    letter-spacing: 0.03em !important;
+    margin: 0.6rem 0 0.3rem !important;
+  }
+
+  .hero-main-glass-card .hero-tagline,
+  .hero-main-glass-card .hero-tagline .tag-part {
+    font-size: 0.92rem !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .hero-main-glass-card .hero-subtagline {
+    font-size: 0.74rem !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .countdown-grid,
+  .hero-main-glass-card .countdown-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 1.2rem !important;
+  }
+
+  .countdown-box,
+  .hero-main-glass-card .countdown-box {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 0.6rem 0.2rem !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .countdown-box .count-num,
+  .hero-main-glass-card .count-num {
+    font-size: 1.35rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .countdown-box .count-label,
+  .hero-main-glass-card .count-label {
+    font-size: 0.54rem !important;
+    letter-spacing: 0.8px !important;
+  }
+
+  .hero-main-glass-card .hero-date-badge {
+    font-size: 0.72rem !important;
+    padding: 0.4rem 0.8rem !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1.3rem !important;
+  }
+
+  .hero-main-glass-card .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.55rem !important;
+  }
+
+  .hero-main-glass-card .hero-cta-group .btn {
+    width: 100% !important;
+    max-width: 270px !important;
+  }
+
+  .page-header-banner .container {
+    padding: 1.3rem 0.75rem !important;
+    border-radius: 20px !important;
+    width: calc(100% - 1rem) !important;
+  }
+
+  .page-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+  }
 }
