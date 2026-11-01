@@ -1076,19 +1076,38 @@ window.FestDB = FestDB;
 // ==========================================================================
 function initParallaxBackground() {
   const bgBackdrop = document.querySelector('.bg-parallax-backdrop');
-  if (!bgBackdrop) return;
+  const header = document.querySelector('.site-header');
 
   let ticking = false;
+  const updateScrollState = () => {
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+
+    // 1. Subtle parallax on top hero background while in view
+    if (bgBackdrop && scrolled < 1200) {
+      bgBackdrop.style.transform = `translate3d(0, ${(scrolled * 0.36).toFixed(1)}px, 0)`;
+    }
+
+    // 2. Adaptive header transition when scrolling into normal background
+    if (header) {
+      if (scrolled > 70) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    }
+
+    ticking = false;
+  };
+
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-        bgBackdrop.style.transform = `translate3d(0, ${scrolled * 0.18}px, 0)`;
-        ticking = false;
-      });
+      window.requestAnimationFrame(updateScrollState);
       ticking = true;
     }
   }, { passive: true });
+
+  // Initial check on page load
+  updateScrollState();
 }
 
 // Clean Unified Atmospheric Theme Matrix (No Dark/Light toggles)
