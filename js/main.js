@@ -1082,9 +1082,12 @@ function initParallaxBackground() {
   const updateScrollState = () => {
     const scrolled = window.pageYOffset || document.documentElement.scrollTop;
 
-    // 1. Subtle parallax on top hero background while in view
-    if (bgBackdrop && scrolled < 1200) {
-      bgBackdrop.style.transform = `translate3d(0, ${(scrolled * 0.36).toFixed(1)}px, 0)`;
+    // 1. Subtle parallax on top hero background while in view (synchronized)
+    if (scrolled < 1100) {
+      const transY = (scrolled * 0.25).toFixed(1);
+      if (bgBackdrop) bgBackdrop.style.transform = `translate3d(0, ${transY}px, 0)`;
+      const bgAtmScrim = document.querySelector('.bg-atmospheric-scrim');
+      if (bgAtmScrim) bgAtmScrim.style.transform = `translate3d(0, ${transY}px, 0)`;
     }
 
     // 2. Adaptive header transition when scrolling into normal background

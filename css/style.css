@@ -155,13 +155,13 @@ body {
   flex-direction: column;
 }
 
-/* TOP HERO PARALLAX BACKGROUND (IMAGE 1 NIGHT CAMPUS, THEN FADES TO DARK CONTRAST) */
+/* TOP HERO PARALLAX BACKGROUND (IMAGE 1 NIGHT CAMPUS) */
 .bg-parallax-backdrop {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 1060px !important;
+  height: 860px !important;
   background-image: url('../images/campus-bg.jpg') !important;
   background-size: cover !important;
   background-position: center top !important;
@@ -173,28 +173,47 @@ body {
   opacity: 1 !important;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.4) 93%, rgba(0, 0, 0, 0) 100%) !important;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.4) 93%, rgba(0, 0, 0, 0) 100%) !important;
+  -webkit-mask-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 45%, 
+    rgba(0, 0, 0, 0.9) 60%, 
+    rgba(0, 0, 0, 0.65) 75%, 
+    rgba(0, 0, 0, 0.35) 86%, 
+    rgba(0, 0, 0, 0.1) 94%, 
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+  mask-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 45%, 
+    rgba(0, 0, 0, 0.9) 60%, 
+    rgba(0, 0, 0, 0.65) 75%, 
+    rgba(0, 0, 0, 0.35) 86%, 
+    rgba(0, 0, 0, 0.1) 94%, 
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
 }
 
-/* ATMOSPHERIC GRADIENT SCRIM (DEEP OBSIDIAN DARK CONTRAST TRANSITION INTO NORMAL CANVAS) */
+/* ATMOSPHERIC GRADIENT SCRIM (FLAWLESS, SEAMLESS DISSOLVE INTO NORMAL #F1F7F7 CANVAS) */
 .bg-atmospheric-scrim {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 1060px !important;
+  height: 860px !important;
   background: linear-gradient(180deg, 
     rgba(8, 14, 26, 0.45) 0%, 
-    rgba(8, 14, 26, 0.1) 20%, 
-    transparent 45%, 
-    rgba(14, 20, 32, 0.35) 70%, 
-    rgba(14, 20, 32, 0.85) 88%, 
-    #0E1420 95%,
+    rgba(8, 14, 26, 0.15) 15%, 
+    transparent 40%, 
+    rgba(241, 247, 247, 0.12) 55%, 
+    rgba(241, 247, 247, 0.38) 70%, 
+    rgba(241, 247, 247, 0.72) 84%, 
+    rgba(241, 247, 247, 0.92) 93%, 
     var(--palette-normal-bg, #F1F7F7) 100%
   ) !important;
   z-index: 1 !important;
   pointer-events: none !important;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 /* Keyboard accessibility */
@@ -2208,67 +2227,113 @@ button {
   }
 }
 
-/* --------------------------------------------------------------------------
-   15. Inner Page Header Banner
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   15. INNER PAGE HEADER BANNER - APPLE STYLED PASTEL FROSTED COLOUR CARD
+   ========================================================================== */
 .page-header-banner {
-  padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-2xl);
-  text-align: center;
-  position: relative;
-  border-bottom: 1px solid rgba(var(--primary-rgb), 0.15);
-  background: radial-gradient(circle at 50% 0%, rgba(112, 0, 255, 0.15) 0%, transparent 65%);
+  padding: clamp(2rem, 3.5vw, 3rem) 0 clamp(1.8rem, 3.5vw, 2.8rem) !important;
+  text-align: center !important;
+  position: relative !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  z-index: 3 !important;
 }
 
-.page-title {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  margin-bottom: var(--space-xs);
-  text-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
+.page-header-banner .container {
+  max-width: 920px !important;
+  margin: 0 auto !important;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3.5vw, 2.8rem) !important;
+  background: linear-gradient(135deg, rgba(213, 229, 229, 0.88) 0%, rgba(176, 215, 216, 0.72) 45%, rgba(247, 203, 202, 0.62) 100%) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border: 1.5px solid var(--palette-mauve, #DDD3D3) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 16px 45px rgba(93, 107, 107, 0.1), inset 0 1.5px 2px rgba(255, 255, 255, 0.95) !important;
+  position: relative !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+}
+
+.page-header-banner .container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 55px rgba(93, 107, 107, 0.14), inset 0 1.5px 2px #FFFFFF !important;
 }
 
 .breadcrumbs {
-  font-family: 'Roboto Slab', serif;
-  font-size: 0.8rem;
-  color: var(--neon-cyan);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  color: var(--palette-slate, #5D6B6B) !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  margin-bottom: 0.75rem !important;
+  padding: 0.35rem 1.15rem !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid var(--palette-mauve, #DDD3D3) !important;
+  border-radius: 50px !important;
+  box-shadow: 0 2px 8px rgba(93, 107, 107, 0.05), inset 0 1px 1px #FFFFFF !important;
+}
+
+.page-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+  color: var(--palette-heading, #2C3E3E) !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.6rem !important;
+  text-shadow: none !important;
+  text-transform: uppercase !important;
+}
+
+.page-header-banner .section-subtitle {
+  color: var(--palette-slate, #5D6B6B) !important;
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
 }
 
 /* --------------------------------------------------------------------------
-   16. Events Page: Filters & Dynamic Cards Grid
+   16. Events & Subpage Filters
    -------------------------------------------------------------------------- */
 .filter-chips-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  margin: var(--space-2xl) 0 var(--space-xl);
-  flex-wrap: wrap;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  margin: 1.5rem 0 0.5rem !important;
+  flex-wrap: wrap !important;
 }
 
 .filter-chip {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  font-family: 'Roboto Slab', serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 1.3rem;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1.5px solid var(--palette-mauve, #DDD3D3) !important;
+  color: var(--palette-slate, #5D6B6B) !important;
+  border-radius: 50px !important;
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.45rem 1.15rem !important;
+  box-shadow: 0 2px 6px rgba(93, 107, 107, 0.05), inset 0 1px 1px #FFFFFF !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.filter-chip:hover,
+.filter-chip:hover {
+  background: #FFFFFF !important;
+  color: var(--palette-heading, #2C3E3E) !important;
+  border-color: var(--palette-aqua, #B0D7D8) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(93, 107, 107, 0.1) !important;
+}
+
 .filter-chip.active {
-  background: var(--neon-cyan);
-  color: var(--bg-core);
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5);
-  font-weight: 700;
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #3B82F6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
 }
 
 .events-group-block {
@@ -2388,26 +2453,43 @@ button {
   margin: var(--space-2xl) 0 var(--space-xl);
 }
 
-.schedule-tab-btn {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 0.7rem 1.8rem;
-  background: rgba(13, 11, 26, 0.85);
-  border: 1px solid rgba(var(--primary-rgb), 0.3);
-  color: var(--text-secondary);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+.schedule-tabs {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  margin: 1.5rem 0 0.5rem !important;
+  flex-wrap: wrap !important;
 }
 
-.schedule-tab-btn:hover,
+.schedule-tab-btn {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1.5px solid var(--palette-mauve, #DDD3D3) !important;
+  color: var(--palette-slate, #5D6B6B) !important;
+  border-radius: 50px !important;
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.45rem 1.15rem !important;
+  box-shadow: 0 2px 6px rgba(93, 107, 107, 0.05), inset 0 1px 1px #FFFFFF !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.schedule-tab-btn:hover {
+  background: #FFFFFF !important;
+  color: var(--palette-heading, #2C3E3E) !important;
+  border-color: var(--palette-aqua, #B0D7D8) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(93, 107, 107, 0.1) !important;
+}
+
 .schedule-tab-btn.active {
-  background: linear-gradient(135deg, var(--neon-cyan), #0077ff);
-  color: var(--bg-core);
-  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.6);
-  border-color: var(--neon-cyan);
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #3B82F6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
 }
 
 .timeline-container {
@@ -4614,25 +4696,34 @@ html {
 }
 
 .cyber-ticker-content {
-  color: var(--palette-slate, #5D6B6B) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  text-shadow: none !important;
+}
+
+.cyber-ticker-content * {
+  color: #000000 !important;
 }
 
 .cyber-ticker-badge {
   background: linear-gradient(135deg, #F7CBCA 0%, #E8B4B3 100%) !important;
   border-radius: 9999px !important;
-  color: #4A3030 !important;
+  color: #000000 !important;
   padding: 0.25rem 0.9rem !important;
   box-shadow: inset 0 1px 0.5px rgba(255, 255, 255, 0.6) !important;
   font-weight: 800 !important;
+  text-shadow: none !important;
 }
 
 .cyber-ticker-highlight {
-  color: #1F3333 !important;
-  background: rgba(176, 215, 216, 0.5) !important;
+  color: #000000 !important;
+  background: rgba(176, 215, 216, 0.6) !important;
   border: 1px solid var(--palette-aqua, #B0D7D8) !important;
   border-radius: 6px !important;
   padding: 0.15rem 0.6rem !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
 }
 
 /* Apple Liquid Pill Buttons */
