@@ -1098,24 +1098,24 @@ button {
   display: block;
 }
 
-/* Dark Theme Default: Show dark transparent logo with crisp white text */
+/* Content Sections / Normal Canvas: Show crisp navy blue official logo */
 .pu-logo-light {
-  display: none !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 6px rgba(18, 32, 68, 0.12)) !important;
 }
 
 .pu-logo-dark {
-  display: block !important;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-}
-
-/* Light Theme: Show light transparent logo with crisp black text & gold seal */
-[data-theme="light"] .pu-logo-dark {
   display: none !important;
 }
 
-[data-theme="light"] .pu-logo-light {
+/* Explicit Dark Theme: Show dark transparent logo with crisp white text */
+[data-theme="dark"] .pu-logo-dark {
   display: block !important;
-  filter: drop-shadow(0 0 8px rgba(91, 127, 255, 0.25));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) !important;
+}
+
+[data-theme="dark"] .pu-logo-light {
+  display: none !important;
 }
 
 [data-theme="light"] .institution-logo-link {
@@ -5528,7 +5528,7 @@ p, span, strong, em, b, a, button,
 }
 
 .host-institution-brand-card img {
-  filter: invert(1) brightness(0.2) contrast(1.2) !important;
+  filter: drop-shadow(0 2px 6px rgba(18, 32, 68, 0.12)) !important;
 }
 
 .host-institution-brand-card:hover {
