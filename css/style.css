@@ -476,43 +476,64 @@ button {
   transform: translateX(4px);
 }
 
-/* Section Headings */
+/* ==========================================================================
+   SECTION HEADER - APPLE STYLED PASTEL COLOUR CARD
+   ========================================================================== */
 .section-header {
   text-align: center;
-  margin-bottom: var(--space-2xl);
+  max-width: 780px;
+  margin: 0 auto clamp(2rem, 4vw, 3.2rem);
+  padding: clamp(1.6rem, 3.2vw, 2.4rem) clamp(1.4rem, 3.5vw, 2.6rem);
+  background: linear-gradient(135deg, rgba(213, 229, 229, 0.78) 0%, rgba(176, 215, 216, 0.6) 45%, rgba(247, 203, 202, 0.5) 100%) !important;
+  backdrop-filter: blur(28px) saturate(170%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(170%) !important;
+  border: 1.5px solid var(--palette-mauve, #DDD3D3) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 16px 45px rgba(93, 107, 107, 0.08), inset 0 1.5px 2px rgba(255, 255, 255, 0.9) !important;
   position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+  z-index: 3;
+}
+
+.section-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 55px rgba(93, 107, 107, 0.12), inset 0 1.5px 2px #FFFFFF !important;
 }
 
 .section-tag {
   font-family: 'Roboto Slab', serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--neon-pink);
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: var(--space-xs);
-  padding: 0.2rem 0.6rem;
-  background: var(--neon-pink-subtle);
-  border: 1px solid rgba(var(--secondary-rgb), 0.3);
-  border-radius: 2px;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  color: var(--palette-slate, #5D6B6B) !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  margin-bottom: 0.75rem !important;
+  padding: 0.35rem 1.15rem !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid var(--palette-mauve, #DDD3D3) !important;
+  border-radius: 50px !important;
+  box-shadow: 0 2px 8px rgba(93, 107, 107, 0.05), inset 0 1px 1px #FFFFFF !important;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  color: var(--text-primary);
-  margin-bottom: var(--space-sm);
-  text-shadow: 0 0 15px rgba(var(--primary-rgb), 0.2);
+  font-size: clamp(1.8rem, 3.8vw, 2.5rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+  color: var(--palette-heading, #2C3E3E) !important;
+  margin-bottom: 0.5rem !important;
+  text-shadow: none !important;
+  text-transform: uppercase !important;
 }
 
 .section-subtitle {
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+  max-width: 620px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: var(--palette-slate, #5D6B6B) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
 }
 
 /* Cyber Cards with Corner Brackets */
